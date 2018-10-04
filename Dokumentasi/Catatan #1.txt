@@ -1,0 +1,35 @@
+- Sudah ada contoh website dari foodpedia, semacam contoh only
+ Masalah testimoni : Referensi dari foodpedia langsung, omongan pelanggan dari foodpedia, bisa 
+video.
+
+- Kolegial : Peminjaman ruangan,
+member kolegial ada dua gold dan silver yang punya benefit masing-masing, pendaftaran membership bisa dari websitedan nantinya secara manual semacam konfirmasi (yang lebih utama)
+Booking akan dipikirin lagi
+
+- Profile tidak statis, dinamik jadi admin bisa mengubah jam operasional dan juga kontak
+
+- Masalah promosi (event) ntar dari poster saja
+
+- Makanan/Menu rekomendasi dari foodpedia
+
+- Review makanan dibikin CRUD supaya bisa disaring dari admin
+
+- Absen jam hadir dan jam pulang, tambahin kolom libur
+
+- stok jumlah bahan baku (misal hari ini beli tomat +2, trus dipakai -1) bukan kadarluarsa, ada warning sisa barang (out of stock or something like that).
+
+- masalah tema website ntar rekomendasi dari foodpedia
+
+- Masalah order sama kayak domino, mungkin ada semacam konfirmasi melalui telpon dari foodpedia sendiri
+
+- Menu rekomendasi di entiti menu, apus promo di menu
+
+- Fasilitas dibikin CRUD
+
+- Di profile tambahin lagi fasilitas (bentukny semacan logo)
+
+- Kolom stock tambahin satuan (nanti di coba2)
+
+- Admin bisa banyak dan punya privilege
+
+- Kalau menu yang ada toping dibedain aja
