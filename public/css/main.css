@@ -581,7 +581,18 @@ section::before,section::after {
 }
 
 .recom-box{
-    background-image:url('img/stickynote.png');
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    top: 0px;
+    left: 0px;
+    background-size: cover;
+    background-image: url('img/stickynote.png');
+    font-size: 20px;
+}
+
+.box-title{
+    font-size: 50px;
 }
 
 /**
