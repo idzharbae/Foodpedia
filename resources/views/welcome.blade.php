@@ -8,5 +8,6 @@
     @include('special')
     @include('reservation')
     @include('chefs')
+    @include('contact')
 
 @endsection
