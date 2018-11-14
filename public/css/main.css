@@ -136,7 +136,7 @@ section::before,section::after {
     top:-5px;
 }
 .navbar-nav>li:nth-child(1) {
-    padding-left: 60px;
+    padding-left: 15px;
 }
 .navbar-nav>li:nth-child(3) {
     padding-left: 110px;

@@ -1,9 +1,8 @@
-<div id="menu" class="light-wrapper">
+<div id="foodmenu" class="light-wrapper">
         <section class="ss-style-top"></section>
         <div class="container inner">
             <h2 class="section-title text-center">Menu</h2>
             <p class="lead main text-center">Our recommended menu</p>
-
             <div class="row">
                 <div class="swiper-container main-slider" id="myCarousel">
                   <div class="swiper-wrapper">
