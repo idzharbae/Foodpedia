@@ -11,54 +11,66 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href='{{url("/admindashboard")}}'>
+          <li class='{{ (Request::path() == "admin" || Request::path() == "admin/dashboard") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/dashboard")}}'>
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+          <li class='{{ (Request::path() == "admin/staff") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/staff")}}'>
               <i class="material-icons">person</i>
-              <p>User Profile</p>
+              <p>Staff</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+          <li class='{{ (Request::path() == "admin/absen") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/absen")}}'>
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Absen Staff</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+          <li class='{{ (Request::path() == "admin/bahan") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/bahan")}}'>
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Bahan Baku</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+          <li class='{{ (Request::path() == "admin/menu") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/menu")}}'>
               <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
+              <p>Menu Makanan</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
+          <li class='{{ (Request::path() == "admin/testimoni") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/testimoni")}}'>
               <i class="material-icons">location_ons</i>
-              <p>Maps</p>
+              <p>Testimoni</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+          <li class='{{ (Request::path() == "admin/kolegial") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/kolegial")}}'>
               <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <p>Kolegial</p>
             </a>
           </li>
-          <!-- <li class="nav-item active-pro ">
-                <a class="nav-link" href="./upgrade.html">
-                    <i class="material-icons">unarchive</i>
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li> -->
+          <li class='{{ (Request::path() == "admin/register") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/register")}}'>
+              <i class="material-icons">notifications</i>
+              <p>Register Admin Baru</p>
+            </a>
+          </li>
+          <li class='{{ (Request::path() == "admin/faq") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/faq")}}'>
+              <i class="material-icons">notifications</i>
+              <p>FAQ</p>
+            </a>
+          </li>
+          <li class='{{ (Request::path() == "admin/message") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/message")}}'>
+              <i class="material-icons">notifications</i>
+              <p>Message</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
