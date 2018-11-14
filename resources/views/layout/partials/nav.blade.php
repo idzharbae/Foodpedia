@@ -14,10 +14,10 @@
             <img src="{{URL::asset('img/logo.png')}}" alt="" style="width:150px;height:150px;">
         </a></div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#story">About</a></li>
-            <li><a href="#reservation">Menu</a></li>    
-            <li><a href="#food-menu">Food Menu</a></li>
-            <li><a href="#special-offser">Special Offers</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>    
+            <li><a href="#kolegial">Kolegial</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
             <!--fix for scroll spy active menu element-->
             <li style="display:none;"><a href="#header"></a></li>
         </ul>

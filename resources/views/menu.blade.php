@@ -1,4 +1,4 @@
-<div id="food-menu" class="light-wrapper">
+<div id="menu" class="light-wrapper">
         <section class="ss-style-top"></section>
         <div class="container inner">
             <h2 class="section-title text-center">Menu</h2>
