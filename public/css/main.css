@@ -587,10 +587,10 @@ section::before,section::after {
     position: absolute;
     height: 250px;
     width: 250px;
-    top: 0px;
-    left: 0px;
-    background-size: cover;
-    background-image: url('img/stickynote.png');
+    left: 20px;
+    bottom: 20px;
+    background-color: #ffffff;
+    opacity: 0.55;
     font-size: 20px;
 }
 
