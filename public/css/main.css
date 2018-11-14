@@ -135,8 +135,11 @@ section::before,section::after {
     position:relative;
     top:-5px;
 }
+.navbar-nav>li:nth-child(1) {
+    padding-left: 60px;
+}
 .navbar-nav>li:nth-child(3) {
-    margin-right: 110px;
+    padding-left: 110px;
 }
 
 

@@ -18,7 +18,7 @@
  
  
  
-       @include('layout.partials.header')
+@include('layout.partials.header')
  
  
  

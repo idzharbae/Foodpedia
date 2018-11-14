@@ -15,12 +15,9 @@
         </a></div>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#story">About</a></li>
-            <li><a href="#reservation">Menu</a></li>
-            <li><a></a></li>
-            <li><a></a></li>
+            <li><a href="#reservation">Menu</a></li>    
             <li><a href="#food-menu">Food Menu</a></li>
             <li><a href="#special-offser">Special Offers</a></li>
-            
             <!--fix for scroll spy active menu element-->
             <li style="display:none;"><a href="#header"></a></li>
         </ul>
