@@ -6,26 +6,29 @@
             <div class="row">
                 <div class="swiper-container main-slider" id="myCarousel">
                   <div class="swiper-wrapper">
-                    
+
                     <div class="swiper-slide slider-bg-position" style="background:url('img/nasgor.jpg');" data-hash="slide1">
-                        
-                        <div class="recom-box"><br>
-                            <h3>Nasi Goreng Telur</h3>
+
+                        <div class="recom-box">
+                            <span>Nasi Goreng Telur
                             Nasi digoreng pake telor, nikmat.
                             Nasi digoreng pake telor, nikmat.
                             Nasi digoreng pake telor, nikmat.
-                            <br>Rp 85000
+                            <h3>IDR85.000,00</h3>
+                            </span>
+
                             <!-- pake string limit nanti kalo ngga kelebihan , klo bisa read more -->
                         </div>
                     </div>
 
                     <div class="swiper-slide slider-bg-position" style="background:url('img/pk-banner.jpg')" data-hash="slide2">
-                        <div class="center text-center">
                             <div class="recom-box"><br>
-                                <h3>FOODPEDIA</h3>
-                                COBA COBA DULU
+                                <span>
+                                  Martabak Foodpedia Mantabb
+                                  Martabak Foodpedia Mantabb
+                                <h3>IDR100.000,00</h3>
+                              </span>
                             </div>
-                        </div>
                     </div>
                   </div>
                   <!-- Add Pagination -->
@@ -35,8 +38,10 @@
                   <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
                 </div>
             </div>
-            
+          </br>
+            <button type="submit" class="btn btn-danger btn-lg">More Menu</button>
         </div>
+
         <!-- /.container -->
         <section class="ss-style-bottom"></section>
     </div><!--/#food-menu-->
