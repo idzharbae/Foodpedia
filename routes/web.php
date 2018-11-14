@@ -17,3 +17,6 @@ Route::get('/', function () {
 Route::get('/admindashboard', function () {
     return view('layout.adminlayout');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
