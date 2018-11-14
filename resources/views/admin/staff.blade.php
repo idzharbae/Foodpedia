@@ -83,23 +83,24 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <form>
-                      	<div class="row" style="margin-top: 20px;">
-                      		<div class="col-md-5">
-                      		  <div class="form-group">
-                      		    <label>Nama</label>
-                      		    <input type="text" class="form-control">
-                      		  </div>
-                      		</div>
-                    	</div>
-                    	<div class="row" style="margin-top: 20px;">
-                    		<div class="col-md-5">
-                      		  <div class="form-group">
-                      		    <label>Umur</label>
-                      		    <input type="number" class="form-control">
-                      		  </div>
-                      		</div>
-                    	</div>
+                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
+                        {{ csrf_field() }}
+                        <div class="row" style="margin-top: 20px;">
+                          <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Nama</label>
+                              <input type="text" class="form-control">
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Umur</label>
+                              <input type="number" class="form-control">
+                            </div>
+                          </div>
+                      </div>
                       <div class="row">
                         <div class="col-md-5" style="margin-top: 20px;">
                             <div class="form-group">

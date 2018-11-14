@@ -97,7 +97,8 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <form enctype="multipart/form-data">
+                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
+                        {{ csrf_field() }}
                       	<div class="row" style="margin-top: 20px;">
                       		<div class="col-md-5">
                       		  <div class="form-group">
