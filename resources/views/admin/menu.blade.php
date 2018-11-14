@@ -19,7 +19,10 @@
                           Rekomendasi^
                         </th>
                         <th>
-                        	Harga
+                          Kategori
+                        </th>
+                        <th>
+                          Harga
                         </th>
                         <th>
                           Status
@@ -28,10 +31,13 @@
                       <tbody>
                         <tr>
                           <td>
-                            Spaghetti
+                            Spaghetti Rasa Melon
                           </td>
                           <td>
                             Ya
+                          </td>
+                          <td>
+                            Spaghetti
                           </td>
                           <td>
                             18.181
@@ -42,10 +48,13 @@
                         </tr>
                         <tr>
                           <td>
-                            Lasagna
+                            Lasagna Rasa Stroberi
                           </td>
                           <td>
                             Tidak
+                          </td>
+                          <td>
+                            Lasagna
                           </td>
                           <td>
                             14.1414
@@ -56,10 +65,13 @@
                         </tr>
                         <tr>
                           <td>
-                            Roti Bakar
+                            Roti Bakar Keju
                           </td>
                           <td>
                             Ya
+                          </td>
+                          <td>
+                            Roti Bakar
                           </td>
                           <td>
                             14.545
@@ -70,10 +82,13 @@
                         </tr>
                         <tr>
                           <td>
-                            Mie Goreng
+                            Mie Goreng Rendang
                           </td>
                           <td>
                             Ya
+                          </td>
+                          <td>
+                            Rendang
                           </td>
                           <td>
                             1.337
@@ -99,33 +114,46 @@
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <form>
-                      	<div class="row" style="margin-top: 20px;">
-                      		<div class="col-md-5">
-                      		  <div class="form-group">
-                      		    <label>Nama</label>
-                      		    <input type="text" class="form-control">
-                      		  </div>
-                      		</div>
-                    	</div>
-                    	<div class="row">
-                    		<div class="col-md-5">
-                      		  <div class="form-group">
-                      		    <label>Rekomendasi^</label>
-                      		    <select style="margin-top: 20px;" name="rekomendasi" class="col-md-2">
-                      		    	<option value="yes">Ya</option>
-                      		    	<option value="no">Tidak</option>
-                      		    </select>
-                      		  </div>
-                      		</div>
-                    	</div>
-                    	<div class="row" style="margin-top: 20px;">
-                    		<div class="col-md-5">
-                      		  <div class="form-group">
-                      		    <label>Harga</label>
-                      		    <input type="number" class="form-control">
-                      		  </div>
-                      		</div>
-                    	</div><br><br>
+                        <div class="row" style="margin-top: 20px;">
+                          <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Nama</label>
+                              <input type="text" class="form-control">
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Rekomendasi^</label>
+                              <select style="margin-top: 20px;" name="rekomendasi" class="col-md-2">
+                                <option value="yes">Ya</option>
+                                <option value="no">Tidak</option>
+                              </select>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Kategori</label>
+                              <select style="margin-top: 20px;" name="rekomendasi" class="col-md-5">
+                                <option value="roti-bakar">roti bakar</option>
+                                <option value="spaghetti">spaghetti</option>
+                                <option value="lasagna">lasagna</option>
+                                <option value="rendang">rendang</option>
+                              </select>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Harga</label>
+                              <input type="number" class="form-control">
+                            </div>
+                          </div>
+                      </div><br><br>
                       <button type="submit" class="btn btn-primary pull-left">Tambah Menu</button>
                       </form>
                     </table>

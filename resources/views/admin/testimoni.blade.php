@@ -6,7 +6,7 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Daftar</h4>
-                  <p class="card-category">Daftar menu yang sudah dibuat.</p>
+                  <p class="card-category">Daftar testimoni yang sudah dibuat.</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -93,7 +93,7 @@
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title mt-0">Tambah Baru</h4>
-                  <p class="card-category">Tambah menu baru ke daftar</p>
+                  <p class="card-category">Tambah testimoni baru ke daftar</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
