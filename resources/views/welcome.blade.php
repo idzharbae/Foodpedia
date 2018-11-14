@@ -9,5 +9,6 @@
     @include('reservation')
     @include('chefs')
     @include('contact')
+    @include('faq')
 
 @endsection
