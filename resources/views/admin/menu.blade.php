@@ -87,6 +87,7 @@
                   </div>
                 </div>
               </div>
+               <span style="color: white;">^ = Ya / Tidak</span>
             </div>
             <div class="col-md-12">
               <div class="card card-plain">
@@ -124,12 +125,14 @@
                       		    <input type="number" class="form-control">
                       		  </div>
                       		</div>
-                    	</div>
+                    	</div><br><br>
+                      <button type="submit" class="btn btn-primary pull-left">Tambah Menu</button>
                       </form>
                     </table>
                   </div>
                 </div>
               </div>
             </div>
+            <span style="color: white;">^ = Ya / Tidak</span>
           </div>
 @endsection
