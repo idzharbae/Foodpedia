@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTestimonisTable extends Migration
+class CreateKolegialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateTestimonisTable extends Migration
      */
     public function up()
     {
-        Schema::create('testimonis', function (Blueprint $table) {
+        Schema::create('kolegials', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('message');
-            $table->string('image')->default('no-cover.jpeg');//uncomment kalo mau ada gambar
+            $table->string('Fname');
+            $table->string('Lname');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('rank');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateTestimonisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('testimonis');
+        Schema::dropIfExists('kolegials');
     }
 }
