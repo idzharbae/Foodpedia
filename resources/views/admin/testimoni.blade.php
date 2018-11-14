@@ -87,7 +87,6 @@
                   </div>
                 </div>
               </div>
-               <span style="color: white;">^ = Ya / Tidak</span>
             </div>
             <div class="col-md-12">
               <div class="card card-plain">
@@ -131,7 +130,6 @@
                 </div>
               </div>
             </div>
-            <span style="color: white;">^ = Ya / Tidak</span>
           </div>
 @endsection
 
