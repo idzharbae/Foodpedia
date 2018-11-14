@@ -1,4 +1,4 @@
-<div id="chefs" class="parallax pricing">
+<div id="testimoni" class="parallax pricing">
         <div class="container inner">
 
             <h2 class="section-title text-center">Testimoni</h2>

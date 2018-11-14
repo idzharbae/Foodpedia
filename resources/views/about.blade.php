@@ -1,4 +1,4 @@
-<div id="story" class="light-wrapper">
+<div id="about" class="light-wrapper">
         <section class="ss-style-top"></section>
         <div class="container inner">
             <h2 class="section-title text-center">About Us</h2>
