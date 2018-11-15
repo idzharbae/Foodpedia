@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/menu', function () {
+    return view('menu.menu');
+});
+
 // Admin Routes
 Route::group(['prefix'=>'admin'],function(){
 	Route::get('/', function () {
