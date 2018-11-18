@@ -39,7 +39,7 @@
                 </div>
             </div>
           </br>
-            <button type="submit" class="btn btn-danger btn-lg">More Menu</button>
+            <button type="submit" class="btn btn-danger btn-lg" onclick="location.href='/menu';">More Menu</button>
         </div>
 
         <!-- /.container -->

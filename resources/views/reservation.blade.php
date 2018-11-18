@@ -6,8 +6,6 @@
             <div class="box">
             <div class="container">
                 <div class="row">
-                     
-                        
                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="box-title">
                                     <h4>Silver</h4>
@@ -18,12 +16,12 @@
                                 <div class="text">
                                     <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
                                 </div>
-                                
+
                                 <a href="#">Learn More</a>
-                                
+
                              </div>
-                        </div>   
-                        
+                        </div>
+
                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="box-title">
                                     <h4>Gold</h4>
@@ -32,19 +30,19 @@
                                 <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
                                 <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
                                 <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
-                                
+
                                 <div class="text">
                                     <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
                                 </div>
-                                
+
                                 <a href="#">Learn More</a>
-                                
+
                              </div>
-                        </div>   
-                
-                </div>      
+                        </div>
+
+                </div>
             </div>
-        
+
             <div class="row">
                 <div class="col-md-6">
                     <form class="form form-table" method="post" name="">
@@ -108,7 +106,7 @@
                       </form>
                 </div><!-- col-md-6 -->
                 <div class="col-md-5 col-md-offset-1">
-                    
+
                     <h3><i class="fa fa-clock-o fa-fw"></i>Hours</h3>
                     <h4>Breakfast</h4>
                     <p>Mon to Fri: 7:30 AM - 11:30 AM<br>Sat &amp; Sun: 8:00 AM - 9:00 AM</p>
@@ -127,7 +125,7 @@
                 </div><!-- col-md-6 -->
             </div>
         </div>
-            <!-- /.services --> 
+            <!-- /.services -->
         </div>
         <!-- /.container -->
         <section class="ss-style-bottom"></section>
