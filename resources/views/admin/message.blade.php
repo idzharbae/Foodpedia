@@ -29,26 +29,28 @@
                         </th>
                       </thead>
                       <tbody>
+                        @foreach($contact as $pesan)
                         <tr>
                           <td>
-                          	Krismanti
+                          	{{$pesan->name}}
                           </td>
                           <td>
-                            krismanti@pencintamakanan.com
+                            {{$pesan->email}}
                           </td>
                           <td>
-                            Kentang gorengnya terlalu asin
+                            {{$pesan->subject}}
                           </td>
                           <td>
-                            Tadi saya makan kentang goreng tapi kayaknya keasinan, tapi tetep enak sih.
+                            {{$pesan->message}}
                           </td>
                           <td>
-                            14 September 2018
+                            {{$pesan->created_at}}
                           </td>
                           <td>
                             edit[x]
                           </td>
                         </tr>
+                        @endforeach
                         <tr>
                           <td>
                             Mr Tajir

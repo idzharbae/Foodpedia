@@ -49,7 +49,7 @@
           </li>
           <li class='{{ (Request::path() == "admin/kolegial") ? "nav-item active" : "nav-item" }}'>
             <a class="nav-link" href='{{url("/admin/kolegial")}}'>
-              <i class="material-icons">place</i>
+              <i class="material-icons">meeting_room</i>
               <p>Kolegial</p>
             </a>
           </li>
@@ -67,7 +67,7 @@
           </li>
           <li class='{{ (Request::path() == "admin/message") ? "nav-item active" : "nav-item" }}'>
             <a class="nav-link" href='{{url("/admin/message")}}'>
-              <i class="material-icons">notifications</i>
+              <i class="material-icons">email</i>
               <p>Message</p>
             </a>
           </li>

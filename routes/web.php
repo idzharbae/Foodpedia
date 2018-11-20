@@ -43,9 +43,8 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/menu','MenuController@home');
 	Route::post('/menu/save','MenuController@add');
 
-	Route::get('/message', function () {
-	    return view('admin.message');
-	});
+	Route::get('/message', 'ContactController@home');
+  
 	Route::get('/register', function () {
 	    return view('admin.register');
 	});

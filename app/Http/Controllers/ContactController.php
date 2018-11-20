@@ -14,7 +14,7 @@ class ContactController extends Controller
     }
     public function home(){
     	$contact = Contact::all();
-    	return view('welcome', ['contact'=>$contact]);
+    	return view('admin.message', ['contact'=>$contact]);
     }
 
     public function add(Request $request){
