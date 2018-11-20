@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Absen;
 use App\Staff;
 class AbsenController extends Controller
@@ -11,21 +13,27 @@ class AbsenController extends Controller
     {
         $this->middleware('auth');
     }
+    public function home(){
+        $staff = Staff::all();
+        $absen = Absen::all();
+        return view('admin.absen',compact('staff','absen'));
+    }
     public function datang($id){
+        
         $human = Staff::find($id);
         $absen = new Absen;
         $absen->id_staff = $id;
-        $absen->jam_datang = date('Y-m-d H:i:s');
+        $absen->jam_dateng = date('Y-m-d H:i:s');
         $absen->status = 1;
         $absen->save();
-    	return $absen;
+    	return redirect('/admin/absen')->with('info','Article Saved Successfully!');
     }
     public function pulang($id_absen){
         $absen = Absen::find($id_absen);
         $absen->jam_pulang = date('Y-m-d H:i:s');
         $absen->status = 2;
         $absen->save();
-    	return $absen;
+        return redirect('/admin/absen')->with('info','Article Saved Successfully!');
     }
 
 }
