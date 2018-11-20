@@ -48,9 +48,8 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/register', function () {
 	    return view('admin.register');
 	});
-	Route::get('/staff', function () {
-	    return view('admin.staff');
-	});
+
+	Route::get('/staff','StaffController@home');
 	Route::post('/staff/save','StaffController@add');
 
 	Route::get('/testimoni', function () {

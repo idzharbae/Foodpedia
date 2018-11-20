@@ -10,7 +10,7 @@ class StaffController extends Controller
 {
     public function home(){
     	$staff = Staff::all();
-    	return view('welcome', ['staff'=>$staff]);
+    	return view('admin.staff', ['staff'=>$staff]);
     }
 
     public function add(Request $request){
@@ -24,7 +24,7 @@ class StaffController extends Controller
         $staff->age = $request->input('age');
         $staff->jabatan = $request->input('jabatan');
     	$staff->save();
-    	return redirect('/')->with('info','Staff Saved Successfully!');
+    	return redirect('/admin/staff')->with('info','Staff Saved Successfully!');
     }
     public function update($id){
     	$staff = Staff::find($id);

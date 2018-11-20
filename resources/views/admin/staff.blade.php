@@ -52,48 +52,22 @@ document.onreadystatechange = () => {
                         </th>
                       </thead>
                       <tbody>
+                      @foreach($staff as $human)
                         <tr>
                           <td>
-                            Gill Bates
+                            {{$human->name}}
                           </td>
                           <td>
-                            65
+                            {{$human->age}}
                           </td>
                           <td>
-                            Cleaning Service
+                            {{$human->jabatan}}
                           </td>
                           <td>
                             edit[x]
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            Beff Jezos
-                          </td>
-                          <td>
-                            50
-                          </td>
-                          <td>
-                            Kasir
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Barren Wuffet
-                          </td>
-                          <td>
-                            70
-                          </td>
-                          <td>
-                            Chef
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
+                      @endforeach
                       </tbody>
                     </table>
                   </div>
