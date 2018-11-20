@@ -64,7 +64,7 @@ document.onreadystatechange = () => {
                             {{$human->jabatan}}
                           </td>
                           <td>
-                            edit[x]
+                            <p>Edit<i class="material-icons">cancel</i></p>
                           </td>
                         </tr>
                       @endforeach

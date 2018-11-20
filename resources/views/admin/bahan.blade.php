@@ -121,7 +121,7 @@ document.onreadystatechange = () => {
                       		<div class="col-md-5">
                       		  <div class="form-group">
                       		    <label>Nama</label>
-                      		    <input type="text" class="form-control">
+                      		    <input type="text" class="form-control" name = "name">
                       		  </div>
                       		</div>
                     	</div>
@@ -129,7 +129,7 @@ document.onreadystatechange = () => {
                     		<div class="col-md-5">
                       		  <div class="form-group">
                       		    <label>Jumlah</label>
-                      		    <input type="number" class="form-control">
+                      		    <input type="number" class="form-control" name="total">
                       		  </div>
                       		</div>
                     	</div>

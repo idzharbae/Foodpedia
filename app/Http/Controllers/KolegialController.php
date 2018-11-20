@@ -14,7 +14,7 @@ class KolegialController extends Controller
     }
     public function home(){
     	$kolegial = Kolegial::all();
-    	return view('welcome', ['kolegial'=>$kolegial]);
+    	return view('admin.kolegial', ['kolegial'=>$kolegial]);
     }
 
     public function add(Request $request){
@@ -31,9 +31,9 @@ class KolegialController extends Controller
         $kolegial->email = $request->input('email');
         $kolegial->phone = $request->input('phone');
         $kolegial->rank = $request->input('rank');
-        
+
         $kolegial->save();
-    	return redirect('/')->with('info','Kolegial Saved Successfully!');
+    	return redirect('/admin/kolegial')->with('info','Kolegial Saved Successfully!');
     }
     public function update($id){
     	$kolegial = Kolegial::find($id);

@@ -44,9 +44,6 @@ document.onreadystatechange = () => {
                           Rekomendasi^
                         </th>
                         <th>
-                          Kategori
-                        </th>
-                        <th>
                           Harga
                         </th>
                         <th>
@@ -54,74 +51,22 @@ document.onreadystatechange = () => {
                         </th>
                       </thead>
                       <tbody>
+                      @foreach($menu as $item)
                         <tr>
                           <td>
-                            Spaghetti Rasa Melon
+                            {{$item->name}}
                           </td>
                           <td>
-                            Ya
+                            {{$item->recommended}}
                           </td>
                           <td>
-                            Spaghetti
-                          </td>
-                          <td>
-                            18.181
+                            {{$item->harga}}
                           </td>
                           <td>
                             edit[x]
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            Lasagna Rasa Stroberi
-                          </td>
-                          <td>
-                            Tidak
-                          </td>
-                          <td>
-                            Lasagna
-                          </td>
-                          <td>
-                            14.1414
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Roti Bakar Keju
-                          </td>
-                          <td>
-                            Ya
-                          </td>
-                          <td>
-                            Roti Bakar
-                          </td>
-                          <td>
-                            14.545
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Mie Goreng Rendang
-                          </td>
-                          <td>
-                            Ya
-                          </td>
-                          <td>
-                            Rendang
-                          </td>
-                          <td>
-                            1.337
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
+                      @endforeach
                       </tbody>
                     </table>
                   </div>
@@ -164,24 +109,11 @@ document.onreadystatechange = () => {
                             </div>
                           </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-5">
-                            <div class="form-group">
-                              <label>Kategori</label>
-                              <select style="margin-top: 20px;" name="rekomendasi" class="col-md-5">
-                                <option value="roti-bakar">roti bakar</option>
-                                <option value="spaghetti">spaghetti</option>
-                                <option value="lasagna">lasagna</option>
-                                <option value="rendang">rendang</option>
-                              </select>
-                            </div>
-                          </div>
-                      </div>
                       <div class="row" style="margin-top: 20px;">
                         <div class="col-md-5">
                             <div class="form-group">
                               <label>Harga</label>
-                              <input type="number" class="form-control">
+                              <input type="number" class="form-control" name="harga">
                             </div>
                           </div>
                       </div><br><br>
