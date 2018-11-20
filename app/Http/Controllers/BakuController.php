@@ -18,6 +18,7 @@ class BakuController extends Controller
     }
 
     public function add(Request $request){
+        dd($request);
     	$this->validate($request,[
     		'name'=>'required',
             'total'=>'required',

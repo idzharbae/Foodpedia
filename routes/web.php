@@ -30,9 +30,7 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/absen', function () {
 	    return view('admin.absen');
 	});
-	Route::get('/bahan', function () {
-	    return view('admin.bahan');
-	});
+	Route::post('/bahan/save','BakuController@add');
 	Route::get('/faq', function () {
 	    return view('admin.faq');
 	});
@@ -58,4 +56,5 @@ Route::group(['prefix'=>'admin'],function(){
 });
 
 Auth::routes();
-
+// Route::get('/loginadmin', 'HomeController@index')->name('home');
+Route::get('/home','AdminController@home')->name('home');
