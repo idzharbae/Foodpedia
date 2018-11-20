@@ -15,19 +15,19 @@ class FaqController extends Controller
     }
     public function home(){
     	$faq = Faq::all();
-    	return view('welcome', ['faq'=>$faq]);
+    	return view('admin.faq', ['faq'=>$faq]);
     }
 
     public function add(Request $request){
     	$this->validate($request,[
     		'title'=>'required',
-            'description'=>'required',
+          'description'=>'required',
     	]);
-    	$faq = new Contact;
+    	$faq = new Faq;
     	$faq->title = $request->input('title');
-        $faq->description = $request->input('description');
+      $faq->description = $request->input('description');
     	$faq->save();
-    	return redirect('/')->with('info','Menu Saved Successfully!');
+    	return redirect('/admin/faq')->with('info','Menu Saved Successfully!');
     }
     public function update($id){
     	$faq = Faq::find($id);

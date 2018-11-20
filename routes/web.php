@@ -30,16 +30,13 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/absen', function () {
 	    return view('admin.absen');
 	});
-	
-	Route::get('/bahan', function () {
-	    return view('admin.bahan');
-	});
+
+  Route::get('/bahan','BakuController@home');
 	Route::post('/bahan/save','BakuController@add');
-	
-	Route::get('/faq', function () {
-	    return view('admin.faq');
-	});
-	
+
+  Route::get('/faq', 'FaqController@home');
+  Route::post('/faq/save', 'FaqController@add');
+
 	Route::get('/kolegial','KolegialController@home');
 	Route::post('/kolegial/save','KolegialController@add');
 
@@ -55,10 +52,10 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::get('/staff','StaffController@home');
 	Route::post('/staff/save','StaffController@add');
-	
+
 	Route::get('/testimoni','TestimoniController@home');
 	Route::post('/testimoni/save','TestimoniController@add');
-	
+
 });
 
 Auth::routes();

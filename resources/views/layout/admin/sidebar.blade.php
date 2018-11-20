@@ -55,13 +55,13 @@
           </li>
           <li class='{{ (Request::path() == "admin/register") ? "nav-item active" : "nav-item" }}'>
             <a class="nav-link" href='{{url("/admin/register")}}'>
-              <i class="material-icons">notifications</i>
+              <i class="material-icons">supervisor_account</i>
               <p>Register Admin Baru</p>
             </a>
           </li>
           <li class='{{ (Request::path() == "admin/faq") ? "nav-item active" : "nav-item" }}'>
             <a class="nav-link" href='{{url("/admin/faq")}}'>
-              <i class="material-icons">notifications</i>
+              <i class="material-icons">question_answer</i>
               <p>FAQ</p>
             </a>
           </li>
