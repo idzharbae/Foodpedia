@@ -143,6 +143,14 @@ section::before,section::after {
 }
 
 
+@media only screen and (max-width: 767px){
+    .navbar-nav>li:nth-child(1) {
+        padding-left: 0px;
+    }
+    .navbar-nav>li:nth-child(3) {
+        padding-left: 0px;
+    }
+}
 /* ==========================================================================
     03. Navigation
 ========================================================================== */
@@ -603,6 +611,8 @@ section::before,section::after {
 .box-title{
     font-size: 50px;
 }
+
+
 
 /**
  * Swiper 3.4.0

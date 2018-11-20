@@ -62,7 +62,8 @@ document.onreadystatechange = () => {
                             {{$item->message}}
                           </td>
                           <td>
-                            <img class="img-responsive img-cover-profile" src="{{asset($item->image)}}" alt="">
+                            <img class="img-responsive img-cover-profile" src="{{asset($item->image)}}" alt=""
+                            style="max-width:100px; max-height:100px">
                           </td>
                           <td>
                             edit[x]
@@ -153,7 +154,7 @@ document.onreadystatechange = () => {
                     		<div class="col-md-5">
                       		  <div>
                       		    <label>Gambar</label><br>
-                      		    <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="display:none;" >
+                      		    <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="display:none; max-height:400px; max-width: 400px;" >
                       		   <input type="file" name="image" id="img" required>
                       		  </div>
                       		</div>

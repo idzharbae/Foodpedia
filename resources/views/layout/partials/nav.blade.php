@@ -19,7 +19,7 @@
             <li><a href="#kolegial">Kolegial</a></li>
             <li><a href="#testimoni">Testimoni</a></li>
             <!--fix for scroll spy active menu element-->
-            <li style="display:none;"><a href="#header"></a></li>
+            
         </ul>
 
     </div><!--/.navbar-collapse -->
