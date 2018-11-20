@@ -71,12 +71,6 @@
               <p>Message</p>
             </a>
           </li>
-          <li class='{{ (Request::path() == "/logout") ? "nav-item active" : "nav-item" }}'>
-            <a class="nav-link" href='{{url("/logout")}}'>
-              <i class="material-icons">arrow_back</i>
-              <p>Logout</p>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
