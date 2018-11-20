@@ -55,10 +55,10 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::get('/staff','StaffController@home');
 	Route::post('/staff/save','StaffController@add');
-
-	Route::get('/testimoni', function () {
-	    return view('admin.testimoni');
-	});
+	
+	Route::get('/testimoni','TestimoniController@home');
+	Route::post('/testimoni/save','TestimoniController@add');
+	
 });
 
 Auth::routes();

@@ -31,7 +31,7 @@ class KolegialController extends Controller
         $kolegial->email = $request->input('email');
         $kolegial->phone = $request->input('phone');
         $kolegial->rank = $request->input('rank');
-
+        
         $kolegial->save();
     	return redirect('/admin/kolegial')->with('info','Kolegial Saved Successfully!');
     }

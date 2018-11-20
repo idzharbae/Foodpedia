@@ -53,20 +53,22 @@ document.onreadystatechange = () => {
                         </th>
                       </thead>
                       <tbody>
+                        @foreach($testimoni as $item)
                         <tr>
                           <td>
-                            Wardiman
+                            {{$item->name}}
                           </td>
                           <td>
-                            Mantap Jiwa
+                            {{$item->message}}
                           </td>
                           <td>
-                            img
+                            <img class="img-responsive img-cover-profile" src="{{asset($item->image)}}" alt="">
                           </td>
                           <td>
                             edit[x]
                           </td>
                         </tr>
+                        @endforeach
                         <tr>
                           <td>
                             Alvin Reinaldo
@@ -129,7 +131,7 @@ document.onreadystatechange = () => {
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
+                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('admin/testimoni/save') }}" enctype="multipart/form-data" >
                         {{ csrf_field() }}
                       	<div class="row" style="margin-top: 20px;">
                       		<div class="col-md-5">

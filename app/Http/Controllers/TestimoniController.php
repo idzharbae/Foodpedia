@@ -31,7 +31,7 @@ class TestimoniController extends Controller
             $testimoni->image = $name;
         }
     	$testimoni->save();
-    	return redirect('/')->with('info','Testimoni Saved Successfully!');
+    	return redirect('/admin/testimoni')->with('info','Testimoni Saved Successfully!');
     }
     public function update($id){
     	$testimoni = Testimoni::find($id);
