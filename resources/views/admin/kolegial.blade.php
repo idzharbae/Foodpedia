@@ -1,6 +1,15 @@
 @extends('layout.adminlayout')
 
 @section('content')
+
+  <ul id="tabscript" class="nav nav-tabs" >
+    <li class="tabss"><a data-toggle="tab" href="#member">Daftar Member</a></li>
+    <li class="tabss"><a data-toggle="tab" href="#tambahmember">Tambah Member</a></li>
+  </ul>
+
+    <div class="tab-content">
+
+      <div id="member" class="tab-pane active">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -98,6 +107,11 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div id="tambahmember" class="tab-pane">
+          <div class="row">
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
@@ -158,4 +172,6 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
 @endsection

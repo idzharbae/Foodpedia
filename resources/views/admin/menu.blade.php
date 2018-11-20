@@ -1,6 +1,31 @@
 @extends('layout.adminlayout')
 
+<!-- Script tab -->
+<script>
+document.onreadystatechange = () => {
+  if(document.readyState === 'complete'){
+    var header = document.getElementById("tabscript");
+    var btns = header.getElementsByClassName("tabss");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  }
+};
+</script>
+
 @section('content')
+  <ul id="tabscript" class="nav nav-tabs" >
+    <li class="tabss"><a data-toggle="tab" href="#menu">Daftar Menu</a></li>
+    <li class="tabss"><a data-toggle="tab" href="#tambahmenu">Tambah Menu</a></li>
+  </ul>
+
+  <div class="tab-content">
+
+      <div id="menu" class="tab-pane active">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -104,6 +129,11 @@
               </div>
                <span style="color: white;">^ = Ya / Tidak</span>
             </div>
+          </div>
+        </div>
+
+        <div id="tambahmenu" class="tab-pane">
+          <div class="row">
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
@@ -164,4 +194,8 @@
             </div>
             <span style="color: white;">^ = Ya / Tidak</span>
           </div>
+        </div>
+
+      </div>
+
 @endsection

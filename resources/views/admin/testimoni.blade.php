@@ -1,6 +1,33 @@
 @extends('layout.adminlayout')
 
+<!-- Script tab -->
+<script>
+document.onreadystatechange = () => {
+  if(document.readyState === 'complete'){
+    var header = document.getElementById("tabscript");
+    var btns = header.getElementsByClassName("tabss");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  }
+};
+</script>
+
 @section('content')
+
+    <ul id="tabscript" class="nav nav-tabs" >
+      <li class="tabss"><a data-toggle="tab" href="#testimoni">Daftar Testimoni</a></li>
+      <li class="tabss"><a data-toggle="tab" href="#tambahtestimoni">Tambah Testimoni</a></li>
+    </ul>
+
+
+      <div class="tab-content">
+
+        <div id="testimoni" class="tab-pane active">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -88,6 +115,11 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div id="tambahtestimoni" class="tab-pane">
+          <div class="row">
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
@@ -132,6 +164,8 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
 @endsection
 
 @section('script')
@@ -146,7 +180,7 @@
             freader.readAsDataURL(input.files[0]);
         }
     }
-    
+
     $("#img").change(function(){
         preview(this);
     });

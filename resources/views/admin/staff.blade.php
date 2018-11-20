@@ -1,12 +1,27 @@
 @extends('layout.adminlayout')
 
+<!-- Script tab -->
+<script>
+document.onreadystatechange = () => {
+  if(document.readyState === 'complete'){
+    var header = document.getElementById("tabscript");
+    var btns = header.getElementsByClassName("tabss");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  }
+};
+</script>
 
 @section('content')
 
-
-    <ul class="nav nav-tabs">
-      <li><a class="active" data-toggle="tab" href="#karyawan">Daftar Karyawan</a></li>
-      <li><a data-toggle="tab" href="#tambah">Tambah Karyawan</a></li>
+    <ul id="tabscript" class="nav nav-tabs" >
+      <li class="tabss"><a data-toggle="tab" href="#karyawan">Daftar Karyawan</a></li>
+      <li class="tabss"><a data-toggle="tab" href="#tambah">Tambah Karyawan</a></li>
     </ul>
 
     <div class="tab-content">
