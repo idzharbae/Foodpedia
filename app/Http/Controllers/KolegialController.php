@@ -24,8 +24,8 @@ class KolegialController extends Controller
             'email'=>'required',
             'phone'=>'required',
             'rank'=>'required',
-    	]);
-    	$kolegial = new Menu;
+        ]);
+    	$kolegial = new Kolegial;
     	$kolegial->Fname = $request->input('Fname');
         $kolegial->Lname = $request->input('Lname');
         $kolegial->email = $request->input('email');

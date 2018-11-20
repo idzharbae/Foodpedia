@@ -89,13 +89,13 @@
                       		<div class="col-md-5">
                       		  <div class="form-group">
                       		    <label>Nama Depan</label>
-                      		    <input type="text" class="form-control">
+                      		    <input type="text" class="form-control" name="Fname">
                       		  </div>
                       		</div>
                       		<div class="col-md-5">
                       		  <div class="form-group">
                       		    <label>Nama Belakang</label>
-                      		    <input type="text" class="form-control">
+                      		    <input type="text" class="form-control" name="Lname">
                       		  </div>
                       		</div>
                     	</div>
@@ -103,7 +103,7 @@
                     		<div class="col-md-5">
                       		  <div class="form-group">
                       		    <label>email</label>
-                      		    <input type="text" class="form-control">
+                      		    <input type="text" class="form-control" name = "email">
                       		  </div>
                       		</div>
                     	</div>
@@ -111,7 +111,7 @@
                         <div class="col-md-5" style="margin-top: 20px;">
                             <div class="form-group">
                               <label>Telepon</label>
-                              <input type="number" class="form-control">
+                              <input type="number" class="form-control" name="phone">
                             </div>
                           </div>
                       </div>
@@ -119,9 +119,9 @@
                         <div class="col-md-5" style="margin-top: 20px;">
                             <div class="form-group">
                               <label>Rank</label>
-                              <select style="margin-top: 20px;" name="rekomendasi" class="col-md-5">
-                                <option value="silver">Silver</option>
-                                <option value="gold">Gold</option>
+                              <select style="margin-top: 20px;" name="rank" class="col-md-5">
+                                <option value="Silver">Silver</option>
+                                <option value="Gold">Gold</option>
                               </select>
                             </div>
                           </div>

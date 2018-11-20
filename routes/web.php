@@ -41,7 +41,7 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 	
 	Route::get('/kolegial','KolegialController@home');
-	Route::get('/kolegial/save','KolegialController@add');
+	Route::post('/kolegial/save','KolegialController@add');
 
 	Route::get('/menu','MenuController@home');
 	Route::post('/menu/save','MenuController@add');
