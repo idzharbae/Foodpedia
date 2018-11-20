@@ -27,9 +27,6 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/dashboard', function () {
 	    return view('admin.dashboard');
 	});
-	Route::get('/absen', function () {
-	    return view('admin.absen');
-	});
 	
 	Route::get('/bahan', function () {
 	    return view('admin.bahan');
@@ -58,6 +55,10 @@ Route::group(['prefix'=>'admin'],function(){
 	
 	Route::get('/testimoni','TestimoniController@home');
 	Route::post('/testimoni/save','TestimoniController@add');
+	
+	Route::get('/absen','AbsenController@home');
+	Route::get('/datang/{id}','AbsenController@datang');
+	Route::get('/pulang/{id}','AbsenController@pulang');
 	
 });
 

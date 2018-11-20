@@ -26,34 +26,36 @@
               </th>
             </thead>
             <tbody>
+            @foreach($staff as $human)
+              <?php
+              $haha = App\Absen::where('id_staff',$human->id)->first()
+              ?>
               <tr>
                 <td>
-                  John Linville
+                  {{$human->name}}
                 </td>
                 <td>
-                  <button type="button" name="pagi">Hadir Pagi</button>
+                @if($haha!=null && $haha->status >= 1)
+                {{$haha->jam_dateng}}
+                @else
+                <a  href='{{ url("/admin/datang/{$human->id}") }}'>Datang</a>
+                @endif
+
                 </td>
                 <td>
-                  08:00 11/20/2018
+                @if($haha!=null && $haha->status >= 2)
+                {{$haha->jam_pulang}}
+                @elseif($haha!=null)
+                <a  href='{{ url("/admin/pulang/{$haha->id}") }}' name="pagi">Pulang</a>
+                @else
+                STAFF BELUM HADIR
+                @endif
                 </td>
                 <td>
                   edit[x]
                 </td>
               </tr>
-              <tr>
-                <td>
-                  Wadidaw
-                </td>
-                <td>
-                  16:00 11/20/2018
-                </td>
-                <td>
-                  <button type="button" name="sore">Hadir Sore</button>
-                </td>
-                <td>
-                  edit[x]
-                </td>
-              </tr>
+            @endforeach
             </tbody>
           </table>
         </div>
