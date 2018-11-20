@@ -9,56 +9,70 @@
           <h4 class="card-title mt-0">Admin Baru</h4>
           <p class="card-category">Tambah admin baru</p>
         </div>
+        <div class="card-header">{{ __('Register') }}</div>
+
         <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-hover">
-              <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/kolegial/save') }}" enctype="multipart/form-data" >
-                {{ csrf_field() }}
-                <div class="row" style="margin-top: 20px;">
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <label>Nama Depan</label>
-                      <input type="text" class="form-control" name="Fname">
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
                     </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <label>Nama Belakang</label>
-                      <input type="text" class="form-control" name="Lname">
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
                     </div>
-                  </div>
-              </div>
-              <div class="row" style="margin-top: 20px;">
-                <div class="col-md-5">
-                    <div class="form-group">
-                      <label>email</label>
-                      <input type="text" class="form-control" name = "email">
+                </div>
+
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
                     </div>
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col-md-5" style="margin-top: 20px;">
-                    <div class="form-group">
-                      <label>Telepon</label>
-                      <input type="number" class="form-control" name="phone">
+                </div>
+
+                <div class="form-group row">
+                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                     </div>
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col-md-5" style="margin-top: 20px;">
-                    <div class="form-group">
-                      <label>Rank</label>
-                      <select style="margin-top: 20px;" name="rank" class="col-md-5">
-                        <option value="Silver">Silver</option>
-                        <option value="Gold">Gold</option>
-                      </select>
+                </div>
+
+                <div class="form-group row mb-0">
+                    <div class="col-md-6 offset-md-4">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Register') }}
+                        </button>
                     </div>
-                  </div>
-              </div><br><br>
-              <button type="submit" class="btn btn-primary pull-left">Tambah Member Kolegial</button>
-              </form>
-            </table>
-          </div>
+                </div>
+            </form>
         </div>
       </div>
     </div>
