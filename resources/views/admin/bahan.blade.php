@@ -52,48 +52,22 @@ document.onreadystatechange = () => {
                         </th>
                       </thead>
                       <tbody>
+                        @foreach($baku as $bahan)
                         <tr>
                           <td>
-                            Wortel
+                            {{$bahan->name}}
                           </td>
                           <td>
-                            65
+                            {{$bahan->total}}
                           </td>
                           <td>
-                            12 November 2018
+                            {{$bahan->created_at}}
                           </td>
                           <td>
                             edit[x]
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            Keju
-                          </td>
-                          <td>
-                            50
-                          </td>
-                          <td>
-                            13 November 2018
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Roti
-                          </td>
-                          <td>
-                            70
-                          </td>
-                          <td>
-                            10 Oktober 2018
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>
@@ -133,14 +107,7 @@ document.onreadystatechange = () => {
                       		  </div>
                       		</div>
                     	</div>
-                      <div class="row">
-                        <div class="col-md-5" style="margin-top: 20px;">
-                            <div class="form-group">
-                              <label>Tanggal Dibeli</label>
-                              <input type="date" name="tanggal" class="form-control">
-                            </div>
-                          </div>
-                      </div><br><br>
+                    </br>
                       <button type="submit" class="btn btn-primary pull-left">Tambah Bahan</button>
                       </form>
                     </table>

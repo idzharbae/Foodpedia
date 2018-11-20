@@ -9,9 +9,11 @@
           <h4 class="card-title mt-0">Admin Baru</h4>
           <p class="card-category">Tambah admin baru</p>
         </div>
-        <div class="card-header">{{ __('Register') }}</div>
 
         <div class="card-body">
+
+          <div class="table-responsive">
+            <table class="table table-hover">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
@@ -73,6 +75,11 @@
                     </div>
                 </div>
             </form>
+          </div>
+        </table>
+
+
+
         </div>
       </div>
     </div>
