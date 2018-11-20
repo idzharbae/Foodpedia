@@ -323,12 +323,14 @@ class ComposerStaticInit33c62eebb3213f4b48cf0910ee7a4cb5
     );
 
     public static $classMap = array (
+        'App\\Absen' => __DIR__ . '/../..' . '/app/Absen.php',
         'App\\Baku' => __DIR__ . '/../..' . '/app/Baku.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Faq' => __DIR__ . '/../..' . '/app/Faq.php',
+        'App\\Http\\Controllers\\AbsenController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsenController.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
