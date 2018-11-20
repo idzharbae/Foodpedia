@@ -51,6 +51,8 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/staff', function () {
 	    return view('admin.staff');
 	});
+	Route::post('/staff/save','StaffController@add');
+
 	Route::get('/testimoni', function () {
 	    return view('admin.testimoni');
 	});
@@ -58,4 +60,3 @@ Route::group(['prefix'=>'admin'],function(){
 
 Auth::routes();
 
-Route::get('/loginadmin', 'HomeController@index')->name('home');

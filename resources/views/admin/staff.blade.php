@@ -115,13 +115,13 @@ document.onreadystatechange = () => {
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
+                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/staff/save') }}" enctype="multipart/form-data" >
                         {{ csrf_field() }}
                         <div class="row" style="margin-top: 20px;">
                           <div class="col-md-5">
                             <div class="form-group">
                               <label>Nama</label>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="name">
                             </div>
                           </div>
                       </div>
@@ -129,7 +129,7 @@ document.onreadystatechange = () => {
                         <div class="col-md-5">
                             <div class="form-group">
                               <label>Umur</label>
-                              <input type="number" class="form-control">
+                              <input type="number" class="form-control" name = "age">
                             </div>
                           </div>
                       </div>
@@ -137,11 +137,11 @@ document.onreadystatechange = () => {
                         <div class="col-md-5" style="margin-top: 20px;">
                             <div class="form-group">
                               <label>Jabatan</label>
-                              <select style="margin-top: 20px;" name="rekomendasi" class="col-md-5">
-                                <option value="ceo">CEO</option>
-                                <option value="chef">Chef</option>
-                                <option value="cleaning-service">Cleaning Service</option>
-                                <option value="kasir">Kasir</option>
+                              <select style="margin-top: 20px;" name="jabatan" class="col-md-5">
+                                <option value="CEO">CEO</option>
+                                <option value="Chef">Chef</option>
+                                <option value="Cleaning Service">Cleaning Service</option>
+                                <option value="Kasir">Kasir</option>
                               </select>
                             </div>
                           </div>
