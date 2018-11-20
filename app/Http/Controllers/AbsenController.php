@@ -7,6 +7,10 @@ use App\Absen;
 use App\Staff;
 class AbsenController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function datang($id){
         $human = Staff::find($id);
         $absen = new Absen;

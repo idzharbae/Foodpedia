@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Category;
 class CategoryController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function home(){
     	$category = Category::all();
     	return view('welcome', ['category'=>$category]);

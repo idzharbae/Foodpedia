@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Kolegial;
 class KolegialController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function home(){
     	$kolegial = Kolegial::all();
     	return view('welcome', ['kolegial'=>$kolegial]);

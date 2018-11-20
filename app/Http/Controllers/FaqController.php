@@ -8,7 +8,11 @@ use Illuminate\Support\Facades\Storage;
 use App\Faq;
 class FaqController extends Controller
 {
-    
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function home(){
     	$faq = Faq::all();
     	return view('welcome', ['faq'=>$faq]);

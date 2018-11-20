@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Baku;
 class BakuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function home(){
     	$baku = Baku::all();
     	return view('welcome', ['baku'=>$baku]);

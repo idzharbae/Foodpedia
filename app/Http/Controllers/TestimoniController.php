@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Testimoni;
 class TestimoniController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function home(){
     	$testimoni = Testimoni::all();
     	return view('admin.testimoni', ['testimoni'=>$testimoni]);

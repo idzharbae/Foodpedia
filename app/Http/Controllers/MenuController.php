@@ -9,6 +9,10 @@ use App\Menu;
 
 class MenuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function home(){
     	$menu = Menu::all();
     	return view('admin.menu', ['menu'=>$menu]);
