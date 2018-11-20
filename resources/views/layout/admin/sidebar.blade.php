@@ -43,13 +43,13 @@
           </li>
           <li class='{{ (Request::path() == "admin/testimoni") ? "nav-item active" : "nav-item" }}'>
             <a class="nav-link" href='{{url("/admin/testimoni")}}'>
-              <i class="material-icons">location_ons</i>
+              <i class="material-icons">stars</i>
               <p>Testimoni</p>
             </a>
           </li>
           <li class='{{ (Request::path() == "admin/kolegial") ? "nav-item active" : "nav-item" }}'>
             <a class="nav-link" href='{{url("/admin/kolegial")}}'>
-              <i class="material-icons">notifications</i>
+              <i class="material-icons">place</i>
               <p>Kolegial</p>
             </a>
           </li>
@@ -71,7 +71,12 @@
               <p>Message</p>
             </a>
           </li>
+          <li class='{{ (Request::path() == "/logout") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/logout")}}'>
+              <i class="material-icons">arrow_back</i>
+              <p>Logout</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
-

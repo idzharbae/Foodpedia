@@ -41,66 +41,28 @@
                         </th>
                       </thead>
                       <tbody>
+                      @foreach($kolegial as $human)
                         <tr>
                           <td>
-                            Gill
+                            {{$human->Fname}}
                           </td>
                           <td>
-                            Bates
+                            {{$human->Lname}}
                           </td>
                           <td>
-                            gillbates@megasoft.com
+                            {{$human->email}}
                           </td>
                           <td>
-                            14045
+                            {{$human->phone}}
                           </td>
                           <td>
-                            Gold
+                            {{$human->rank}}
                           </td>
                           <td>
                             edit[x]
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            Beff
-                          </td>
-                          <td>
-                            Jezos
-                          </td>
-                          <td>
-                            beffjezos@amazonia.com
-                          </td>
-                          <td>
-                            18001337
-                          </td>
-                          <td>
-                            Gold
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Barren
-                          </td>
-                          <td>
-                            Wuffet
-                          </td>
-                          <td>
-                            barrenwuffet@silvermansach.com
-                          </td>
-                          <td>
-                            911
-                          </td>
-                          <td>
-                            Silver
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
+                      @endforeach
                       </tbody>
                     </table>
                   </div>
@@ -121,7 +83,7 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
+                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/kolegial/save') }}" enctype="multipart/form-data" >
                         {{ csrf_field() }}
                       	<div class="row" style="margin-top: 20px;">
                       		<div class="col-md-5">

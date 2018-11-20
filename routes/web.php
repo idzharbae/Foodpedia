@@ -36,9 +36,9 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/faq', function () {
 	    return view('admin.faq');
 	});
-	Route::get('/kolegial', function () {
-	    return view('admin.kolegial');
-	});
+  Route::get('/kolegial','KolegialController@home');
+  Route::get('/kolegial/save','KolegialController@add');
+
 	Route::get('/menu','MenuController@home');
 	Route::post('/menu/save','MenuController@add');
 
@@ -58,4 +58,3 @@ Route::group(['prefix'=>'admin'],function(){
 });
 
 Auth::routes();
-

@@ -21,13 +21,11 @@ class MenuController extends Controller
     public function add(Request $request){
     	$this->validate($request,[
     		'name'=>'required',
-            'recommended'=>'required',
-            'categoryId'=>'required'
+        'recommended'=>'required'
     	]);
     	$menu = new Menu;
     	$menu->name = $request->input('name');
         $menu->recommended = $request->input('recommended');
-        $menu->categoryId = $request->input('categoryId');
     	$menu->save();
     	return redirect('/menu')->with('info','Menu Saved Successfully!');
     }
@@ -38,13 +36,11 @@ class MenuController extends Controller
     public function edit(Request $request, $id){
     	$this->validate($request,[
     		'name'=>'required',
-            'recommended'=>'required',
-            'categoryId'=>'required'
+        'recommended'=>'required',
     	]);
         $menu = Menu::find($id);
         $menu->name = $request->input('name');
         $menu->recommended = $request->input('recommended');
-        $menu->categoryId = $request->input('categoryId');
     	$menu->save();
         return redirect('/')->with('info','Menu Updated Successfully!');
     }
