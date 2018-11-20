@@ -16,15 +16,6 @@
             <div class="subtitle" ><h4>INI HANYALAH COBAAN</h4></div>
           </div>
         </div>
-
-        <div class="swiper-slide slider-bg-position" style="background:url('img/pk-banner.jpg')" data-hash="slide2">
-          <div class="center text-center">
-            <div class="banner">
-                <h1 class="">FOODPEDIA</h1>
-            </div>
-            <div class="subtitle" ><h4>INI HANYALAH COBAAN</h4></div>
-          </div>
-        </div>
         
       </div>
       <!-- Add Pagination -->

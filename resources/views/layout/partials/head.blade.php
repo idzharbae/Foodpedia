@@ -26,3 +26,16 @@
     
     <!-- js -->
     <script src="{{ URL::asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+    <script src="js/responsiveslides.js"></script>
+    <script>
+      $(function () {
+        $("#slidez").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 500,
+        maxwidth: 960,
+        namespace: "centered-btns"
+        });
+      });
+    </script>
