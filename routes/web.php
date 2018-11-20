@@ -39,9 +39,9 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/kolegial', function () {
 	    return view('admin.kolegial');
 	});
-	Route::get('/menu', function () {
-	    return view('admin.menu');
-	});
+	Route::get('/menu','MenuController@home');
+	Route::post('/menu/save','MenuController@add');
+
 	Route::get('/message', function () {
 	    return view('admin.message');
 	});

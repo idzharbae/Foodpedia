@@ -11,7 +11,7 @@ class MenuController extends Controller
 {
     public function home(){
     	$menu = Menu::all();
-    	return view('welcome', ['menu'=>$menu]);
+    	return view('admin.menu', ['menu'=>$menu]);
     }
 
     public function add(Request $request){
@@ -25,7 +25,7 @@ class MenuController extends Controller
         $menu->recommended = $request->input('recommended');
         $menu->categoryId = $request->input('categoryId');
     	$menu->save();
-    	return redirect('/')->with('info','Menu Saved Successfully!');
+    	return redirect('/menu')->with('info','Menu Saved Successfully!');
     }
     public function update($id){
     	$menu = Menu::find($id);

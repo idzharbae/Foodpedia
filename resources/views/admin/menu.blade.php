@@ -143,13 +143,13 @@ document.onreadystatechange = () => {
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
+                      <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/menu/save') }}" enctype="multipart/form-data" >
                         {{ csrf_field() }}
                         <div class="row" style="margin-top: 20px;">
                           <div class="col-md-5">
                             <div class="form-group">
                               <label>Nama</label>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="name">
                             </div>
                           </div>
                       </div>
@@ -157,9 +157,9 @@ document.onreadystatechange = () => {
                         <div class="col-md-5">
                             <div class="form-group">
                               <label>Rekomendasi^</label>
-                              <select style="margin-top: 20px;" name="rekomendasi" class="col-md-2">
-                                <option value="yes">Ya</option>
-                                <option value="no">Tidak</option>
+                              <select style="margin-top: 20px;" name="recommended" class="col-md-2">
+                                <option value="Ya">Ya</option>
+                                <option value="Tidak">Tidak</option>
                               </select>
                             </div>
                           </div>
