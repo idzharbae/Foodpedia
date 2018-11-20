@@ -135,7 +135,7 @@ document.onreadystatechange = () => {
                       		<div class="col-md-5">
                       		  <div class="form-group">
                       		    <label>Nama</label>
-                      		    <input type="text" class="form-control">
+                      		    <input type="text" class="form-control" name = "name">
                       		  </div>
                       		</div>
                     	</div>
@@ -143,7 +143,7 @@ document.onreadystatechange = () => {
                       		<div class="col-md-12">
                       		  <div class="form-group">
                       		    <label>Message</label>
-                      		    <textarea class="form-control" rows="5"></textarea>
+                      		    <textarea class="form-control" rows="5" name = "message"></textarea>
                       		  </div>
                       		</div>
                     	</div>
@@ -151,7 +151,7 @@ document.onreadystatechange = () => {
                     		<div class="col-md-5">
                       		  <div>
                       		    <label>Gambar</label><br>
-                      		    <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="display:none;">
+                      		    <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="display:none;" >
                       		   <input type="file" name="image" id="img" required>
                       		  </div>
                       		</div>

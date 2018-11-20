@@ -10,7 +10,7 @@ class TestimoniController extends Controller
 {
     public function home(){
     	$testimoni = Testimoni::all();
-    	return view('welcome', ['menu'=>$testimoni]);
+    	return view('admin.testimoni', ['testimoni'=>$testimoni]);
     }
 
     public function add(Request $request){
