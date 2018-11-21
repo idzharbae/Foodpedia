@@ -44,7 +44,7 @@
                             <h3>IDR85.000,00</h3>
                             </span>
 
-                  
+
                         </div>
                     </div>
 
@@ -58,9 +58,9 @@
                             </div>
                     </div>
                   </div>
-                  
+
                   <div class="swiper-pagination"></div>
-                  
+
                   <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
                   <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
                 </div> -->
@@ -72,3 +72,4 @@
         <!-- /.container -->
         <section class="ss-style-bottom"></section>
     </div><!--/#food-menu-->
+    <section class="ss-style-bottom"></section>
