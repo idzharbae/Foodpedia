@@ -52,14 +52,8 @@ document.onreadystatechange = () => {
                         </th>
                       </thead>
                       <tbody>
-                      <?php
-                      $counter=0;
-                      ?>
-                      @foreach($staff->all() as $human)
+                      @foreach($staff as $human)
                         <tr>
-                        <?php
-                        $counter++;
-                        ?>	
                           <td>
                             {{$human->name}}
                           </td>
@@ -143,7 +137,6 @@ document.onreadystatechange = () => {
                                 </div>
                               </div>
                             </div>
-                            {{-- Confirm Delete --}}
                               <div class="modal fade" id="modal-delete-{{$human->id}}" tabIndex="-1">
                                 <div class="modal-dialog">
                                   <div class="modal-content">

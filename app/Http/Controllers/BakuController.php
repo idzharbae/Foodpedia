@@ -36,13 +36,13 @@ class BakuController extends Controller
     public function edit(Request $request, $id){
     	$this->validate($request,[
     		'name'=>'required',
-        'total'=>'required'
+            'total'=>'required'
     	]);
         $baku = Baku::find($id);
         $baku->name = $request->input('name');
         $baku->total = $request->input('total');
     	$baku->save();
-        return redirect('/')->with('info','Menu Updated Successfully!');
+        return redirect('/admin/bahan')->with('info','Menu Updated Successfully!');
     }
     public function read($id){
     	$baku=Baku::find($id);
@@ -50,6 +50,6 @@ class BakuController extends Controller
     }
     public function delete($id){
     	Baku::where('id',$id)->delete();
-    	return redirect('/')->with('info','Menu Deleted Successfully!');
+    	return redirect('/admin/bahan')->with('info','Menu Deleted Successfully!');
     }
 }

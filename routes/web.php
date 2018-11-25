@@ -38,8 +38,10 @@ Route::group(['prefix'=>'admin'],function(){
 	    return view('admin.absen');
 	});
 
-  Route::get('/bahan','BakuController@home');
+  	Route::get('/bahan','BakuController@home');
 	Route::post('/bahan/save','BakuController@add');
+	Route::post('/bahan/update/{id}','BakuController@edit');
+	Route::get('/bahan/delete/{id}','BakuController@delete');
 
   Route::get('/faq', 'FaqController@home');
   Route::post('/faq/save', 'FaqController@add');

@@ -61,11 +61,74 @@ document.onreadystatechange = () => {
                             {{$bahan->total}}
                           </td>
                           <td>
-                            {{$bahan->created_at}}
+                            {{$bahan->updated_at}}
                           </td>
                           <td>
-                            <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
+                            <p><a href = "#" data-toggle="modal" data-target="#readArt-{{$bahan}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$bahan->id}}"><i class="material-icons">cancel</i></a></p>
                           </td>
+                          <div id="readArt-{{$bahan}}" class="modal fade" role="dialog" >
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Edit {{ $bahan->name }} Data</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/bahan/update/'.$bahan->id) }}" enctype="multipart/form-data" >
+                                      {{ csrf_field() }}
+                                      <div class="row" style="margin-top: 20px;">
+                                        <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Nama</label>
+                                            <input type="text" class="form-control" name = "name" value = "{{$bahan->name}}">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Jumlah</label>
+                                            <input type="number" class="form-control" name="total" value = "{{$bahan->total}}">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary pull-left">Update Data</button>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    </form>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+
+                              <div class="modal fade" id="modal-delete-{{$bahan->id}}" tabIndex="-1">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">
+                                        ×
+                                      </button>
+                                      <h4 class="modal-title">Please Confirm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="lead">
+                                        <i class="fa fa-question-circle fa-lg"></i>  
+                                        Are you sure you want to delete this Court?
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer">
+				                                <a href="{{ url('/admin/bahan/delete/'.$bahan->id) }}" class="btn btn-secondary">Delete</a>
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </tr>
                         @endforeach
                       </tbody>
