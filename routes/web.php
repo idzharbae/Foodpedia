@@ -45,6 +45,8 @@ Route::group(['prefix'=>'admin'],function(){
 
   Route::get('/faq', 'FaqController@home');
   Route::post('/faq/save', 'FaqController@add');
+  Route::post('/faq/update/{id}', 'FaqController@edit');
+  Route::get('/faq/delete/{id}', 'FaqController@delete');
 
 	Route::get('/kolegial','KolegialController@home');
 	Route::post('/kolegial/save','KolegialController@add');
@@ -58,6 +60,7 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/menu/delete/{id}','MenuController@delete');
 
 	Route::get('/message', 'ContactController@home');
+	Route::get('/message/delete/{id}', 'ContactController@delete');
 
 	Route::get('/register', function () {
 	    return view('admin.register');
