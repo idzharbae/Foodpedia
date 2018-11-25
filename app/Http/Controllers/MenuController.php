@@ -47,7 +47,7 @@ class MenuController extends Controller
         $menu->recommended = $request->input('recommended');
         $menu->harga = $request->input('harga');
     	$menu->save();
-        return redirect('/')->with('info','Menu Updated Successfully!');
+        return redirect('/admin/menu')->with('info','Menu Updated Successfully!');
     }
     public function read($id){
     	$menu=Menu::find($id);
@@ -56,7 +56,7 @@ class MenuController extends Controller
     }
     public function delete($id){
     	Menu::where('id',$id)->delete();
-    	return redirect('/')->with('info','Menu Deleted Successfully!');
+    	return redirect('/admin/menu')->with('info','Menu Deleted Successfully!');
     }
 
 }

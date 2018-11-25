@@ -51,6 +51,8 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::get('/menu','MenuController@home');
 	Route::post('/menu/save','MenuController@add');
+	Route::post('/menu/update/{id}','MenuController@edit');
+	Route::get('/menu/delete/{id}','MenuController@delete');
 
 	Route::get('/message', 'ContactController@home');
 
