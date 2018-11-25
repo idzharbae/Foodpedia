@@ -48,6 +48,9 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::get('/kolegial','KolegialController@home');
 	Route::post('/kolegial/save','KolegialController@add');
+	Route::post('/kolegial/update/{id}','KolegialController@edit');
+	Route::get('/kolegial/delete/{id}','KolegialController@delete');
+	Route::get('/kolegial/approve/{id}','KolegialController@approve');
 
 	Route::get('/menu','MenuController@home');
 	Route::post('/menu/save','MenuController@add');

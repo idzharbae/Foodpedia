@@ -46,6 +46,7 @@ class KolegialController extends Controller
             'email'=>'required',
             'phone'=>'required',
             'rank'=>'required',
+            'status'=>'required',
     	]);
         $kolegial = Kolegial::find($id);
     	$kolegial->Fname = $request->input('Fname');
@@ -53,8 +54,9 @@ class KolegialController extends Controller
         $kolegial->email = $request->input('email');
         $kolegial->phone = $request->input('phone');
         $kolegial->rank = $request->input('rank');
+        $kolegial->status = $request->input('status');
     	$kolegial->save();
-        return redirect('/')->with('info','Menu Updated Successfully!');
+    	return redirect('/admin/kolegial')->with('info','Kolegial Saved Successfully!');
     }
     public function read($id){
     	$kolegial=Kolegial::find($id);
@@ -63,7 +65,12 @@ class KolegialController extends Controller
     }
     public function delete($id){
     	Kolegial::where('id',$id)->delete();
-    	return redirect('/')->with('info','Menu Deleted Successfully!');
+    	return redirect('/admin/kolegial')->with('info','Kolegial Saved Successfully!');
     }
-
+    public function approve($id){
+        $kolegial = Kolegial::find($id);
+        $kolegial->status = 1;
+        $kolegial->save();
+    	return redirect('/admin/kolegial')->with('info','Kolegial Saved Successfully!');
+    }
 }

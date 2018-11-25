@@ -20,6 +20,7 @@ class CreateKolegialsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('rank');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
