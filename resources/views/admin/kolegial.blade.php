@@ -59,7 +59,7 @@
                             {{$human->rank}}
                           </td>
                           <td>
-                            edit[x]
+                            <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
                           </td>
                         </tr>
                       @endforeach

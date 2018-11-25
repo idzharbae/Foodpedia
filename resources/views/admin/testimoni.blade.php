@@ -66,7 +66,7 @@ document.onreadystatechange = () => {
                             style="max-width:100px; max-height:100px">
                           </td>
                           <td>
-                            edit[x]
+                            <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
                           </td>
                         </tr>
                         @endforeach
