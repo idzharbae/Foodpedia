@@ -73,6 +73,8 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::get('/testimoni','TestimoniController@home');
 	Route::post('/testimoni/save','TestimoniController@add');
+	Route::post('/testimoni/update/{id}','TestimoniController@edit');
+	Route::get('/testimoni/delete/{id}','TestimoniController@delete');
 
 
 	Route::get('/absen','AbsenController@home');

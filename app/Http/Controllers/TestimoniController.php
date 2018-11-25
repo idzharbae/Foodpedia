@@ -52,7 +52,7 @@ class TestimoniController extends Controller
             $testimoni->image = $name;
         }
     	$testimoni->save();
-        return redirect('/')->with('info','Testimoni Updated Successfully!');
+        return redirect('/admin/testimoni')->with('info','Testimoni Updated Successfully!');
     }
     public function read($id){
     	$testimoni=Testimoni::find($id);
@@ -60,7 +60,12 @@ class TestimoniController extends Controller
 
     }
     public function delete($id){
-    	Testimoni::where('id',$id)->delete();
-    	return redirect('/')->with('info','Testimoni Deleted Successfully!');
+        $testimoni = Testimoni::find($id);
+        $exist = Storage::disk('local')->exists('testimoni',$testimoni->image);
+        if($exist){
+            Storage::disk('local')->delete('testimoni',$testimoni->image);
+        }
+    	$testimoni->delete();
+    	return redirect('/admin/testimoni')->with('info','Testimoni Deleted Successfully!');
     }
 }
