@@ -160,14 +160,9 @@ document.onreadystatechange = () => {
                                       </p>
                                     </div>
                                     <div class="modal-footer">
-                                      <form method="POST" action="">
-                                        {{ csrf_field() }}
+				                                <a href="{{ url('/admin/staff/delete/'.$human->id) }}" class="btn btn-secondary">Delete</a>
                                         <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-danger">
-                                          <i class="fa fa-times-circle"></i> Yes
-                                        </button>
-                                      </form>
                                     </div>
                                   </div>
                                 </div>

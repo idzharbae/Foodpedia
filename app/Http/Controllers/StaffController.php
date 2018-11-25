@@ -54,6 +54,6 @@ class StaffController extends Controller
     }
     public function delete($id){
     	Staff::where('id',$id)->delete();
-    	return redirect('/')->with('info','staff Deleted Successfully!');
+    	return redirect('/admin/staff')->with('info','staff Deleted Successfully!');
     }
 }
