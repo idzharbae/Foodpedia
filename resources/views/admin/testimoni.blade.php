@@ -66,8 +66,80 @@ document.onreadystatechange = () => {
                             style="max-width:100px; max-height:100px">
                           </td>
                           <td>
-                            <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
+                            <p><a href = "#" data-toggle="modal" data-target="#readArt-{{$item}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$item->id}}"><i class="material-icons">cancel</i></a></p>
                           </td>
+                          <div id="readArt-{{$item}}" class="modal fade" role="dialog" >
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Edit {{ $item->name }} Data</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/testimoni/update/'.$item->id) }}" enctype="multipart/form-data" >
+                                      {{ csrf_field() }}
+                                      <div class="row" style="margin-top: 20px;">
+                                        <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Nama</label>
+                                            <input type="text" class="form-control" name = "name" value="{{$item->name}}">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div class="col-md-12">
+                                          <div class="form-group">
+                                            <label>Message</label>
+                                            <textarea class="form-control" rows="5" name = "message">{{$item->name}}</textarea>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-5">
+                                          <div>
+                                            <label>Gambar</label><br>
+                                            <img class="img-responsive img-cover img-center mb-2" id="preview" src="{{asset($item->image)}}" style="max-height:400px; max-width: 400px;" >
+                                          <input type="file" name="image" id="img" required value="{{$item->name}}">
+                                          </div>
+                                        </div>
+                                    </div><br><br>
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary pull-left">Update Data</button>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    </form>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+
+                              <div class="modal fade" id="modal-delete-{{$item->id}}" tabIndex="-1">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">
+                                        ×
+                                      </button>
+                                      <h4 class="modal-title">Please Confirm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="lead">
+                                        <i class="fa fa-question-circle fa-lg"></i>  
+                                        Are you sure you want to delete this Court?
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer">
+				                                <a href="{{ url('/admin/testimoni/delete/'.$item->id) }}" class="btn btn-secondary">Delete</a>
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </tr>
                         @endforeach
                       </tbody>
@@ -112,7 +184,7 @@ document.onreadystatechange = () => {
                     		<div class="col-md-5">
                       		  <div>
                       		    <label>Gambar</label><br>
-                      		    <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="display:none; max-height:400px; max-width: 400px;" >
+                      		    <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="max-height:400px; max-width: 400px;" >
                       		   <input type="file" name="image" id="img" required>
                       		  </div>
                       		</div>

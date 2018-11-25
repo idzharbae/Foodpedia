@@ -47,50 +47,34 @@
                             {{$pesan->created_at}}
                           </td>
                           <td>
-                            <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
+                            <p><a href = "#" data-toggle="modal" data-target="#modal-delete-{{$pesan->id}}"><i class="material-icons">cancel</i></a></p>
                           </td>
+                          <div class="modal fade" id="modal-delete-{{$pesan->id}}" tabIndex="-1">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">
+                                        ×
+                                      </button>
+                                      <h4 class="modal-title">Please Confirm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="lead">
+                                        <i class="fa fa-question-circle fa-lg"></i>  
+                                        Are you sure you want to delete this Court?
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer">
+				                                <a href="{{ url('/admin/message/delete/'.$pesan->id) }}" class="btn btn-secondary">Delete</a>
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </tr>
                         @endforeach
-                        <tr>
-                          <td>
-                            Mr Tajir
-                          </td>
-                          <td>
-                            tajirbanget@yahuu.com
-                          </td>
-                          <td>
-                            Tambah menu baru dong
-                          </td>
-                          <td>
-                            Tadi saya pesen semua menu ternyata uang saya masih sisa.
-                          </td>
-                          <td>
-                            10 September 2018
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Mr Kere
-                          </td>
-                          <td>
-                            kere@kere.com
-                          </td>
-                          <td>
-                            Boleh ngutang?
-                          </td>
-                          <td>
-                            Mau makan di Foodpedia tapi gak punya uang hehe.
-                          </td>
-                          <td>
-                            1 Agustus 2018
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>

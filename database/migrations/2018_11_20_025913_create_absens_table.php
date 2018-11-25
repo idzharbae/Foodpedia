@@ -16,8 +16,9 @@ class CreateAbsensTable extends Migration
         Schema::create('absens', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_staff');
-            $table->dateTime('jam_dateng')->nullable();
-            $table->dateTime('jam_pulang')->nullable();
+            $table->string('jam_dateng')->nullable();
+            $table->string('jam_pulang')->nullable();
+            $table->date('save_date')->nullable();
             $table->integer('status')->nullable();// null = blm, 0 dateng, 1 pulang
             $table->timestamps();
             $table->foreign('id_staff')->references('id')->on('staff');

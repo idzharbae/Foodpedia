@@ -43,8 +43,10 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::post('/bahan/update/{id}','BakuController@edit');
 	Route::get('/bahan/delete/{id}','BakuController@delete');
 
-  Route::get('/faq', 'FaqController@home');
-  Route::post('/faq/save', 'FaqController@add');
+	Route::get('/faq', 'FaqController@home');
+	Route::post('/faq/save', 'FaqController@add');
+	Route::post('/faq/update/{id}', 'FaqController@edit');
+	Route::get('/faq/delete/{id}', 'FaqController@delete');
 
 	Route::get('/kolegial','KolegialController@home');
 	Route::post('/kolegial/save','KolegialController@add');
@@ -58,6 +60,7 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/menu/delete/{id}','MenuController@delete');
 
 	Route::get('/message', 'ContactController@home');
+	Route::get('/message/delete/{id}', 'ContactController@delete');
 
 	Route::get('/register', function () {
 	    return view('admin.register');
@@ -69,9 +72,13 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/staff/delete/{id}','StaffController@delete');
 
 	Route::get('/testimoni','TestimoniController@home');
+	Route::post('/testimoni/save','TestimoniController@add');
+	Route::post('/testimoni/update/{id}','TestimoniController@edit');
+	Route::get('/testimoni/delete/{id}','TestimoniController@delete');
 
 
 	Route::get('/absen','AbsenController@home');
+	Route::post('/absen/cek','AbsenController@cek');
 	Route::get('/datang/{id}','AbsenController@datang');
 	Route::get('/pulang/{id}','AbsenController@pulang');
 

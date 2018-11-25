@@ -75,7 +75,7 @@ document.onreadystatechange = () => {
                                     </button>
                                   </div>
                                   <div class="modal-body">
-                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/menu/update/'.$item->id) }}" enctype="multipart/form-data" >
+                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/faq/update/'.$item->id) }}" enctype="multipart/form-data" >
                                       {{ csrf_field() }}
                                       <div class="row" style="margin-top: 20px;">
                                         <div class="col-md-5">
@@ -140,7 +140,7 @@ document.onreadystatechange = () => {
                                       </p>
                                     </div>
                                     <div class="modal-footer">
-				                                <a href="{{ url('/admin/menu/delete/'.$item->id) }}" class="btn btn-secondary">Delete</a>
+				                                <a href="{{ url('/admin/faq/delete/'.$item->id) }}" class="btn btn-secondary">Delete</a>
                                         <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">Close</button>
                                     </div>

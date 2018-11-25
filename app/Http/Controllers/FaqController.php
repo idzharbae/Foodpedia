@@ -42,7 +42,7 @@ class FaqController extends Controller
     	$faq->title = $request->input('title');
         $faq->description = $request->input('description');
     	$faq->save();
-        return redirect('/')->with('info','Menu Updated Successfully!');
+        return redirect('/admin/faq')->with('info','Menu Updated Successfully!');
     }
     public function read($id){
     	$faq=Faq::find($id);
@@ -51,6 +51,6 @@ class FaqController extends Controller
     }
     public function delete($id){
     	Faq::where('id',$id)->delete();
-    	return redirect('/')->with('info','Menu Deleted Successfully!');
+    	return redirect('/admin/faq')->with('info','Menu Deleted Successfully!');
     }
 }
