@@ -32,7 +32,7 @@ document.onreadystatechange = () => {
     <div class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title ">Daftar</h4>
-        <p class="card-category">Daftar bahan yang sudah terdaftar.</p>
+        <p class="card-category">Daftar absen yang sudah berlalu.</p>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -101,16 +101,16 @@ document.onreadystatechange = () => {
         </div>
 
         <div class="card-body">
-          <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/absen/get') }}" enctype="multipart/form-data" >
+          <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/absen/cek') }}" enctype="multipart/form-data" >
             {{ csrf_field() }}
             <div class="row" style="margin-top: 20px;">
               <div class="col-md-1">
                 <div class="form-group">
-                  <input id="absen" type="date" value="BULAN/HARI/TAHUN" name="date"/>
+                <input type="date" id="absen" name="timereq" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01" max="2018-12-31">
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary pull-left">Cek Kehadiran</button>
           </div>
+              <button type="submit" class="btn btn-primary pull-left">Cek Kehadiran</button>
           </form>
 
 
@@ -121,29 +121,43 @@ document.onreadystatechange = () => {
                   Nama
                 </th>
                 <th>
-                  Kehadiran Pagi
+                  Jam Datang
                 </th>
                 <th>
-                  Kehadiran StaffController
+                  Jam Pulang
                 </th>
                 <th>
                   Status
                 </th>
               </thead>
               <tbody>
+                @if($test!=null)
+                @foreach($test as $write)
                 <tr>
                   <td>
-                    Alvin Reinaldo
+                    {{App\Staff::find($write->id_staff)->name}}
                   </td>
                   <td>
-                    Jam 8
+                  @if($write!=null && $write->status >= 1)
+                  {{$write->jam_dateng}}
+                  @else
+                  Staff Tidak Hadir
+                  @endif
                   </td>
                   <td>
-                    Jam 9
+                  @if($write!=null && $write->status >= 2)
+                  {{$write->jam_pulang}}
+                  @elseif($haha!=null)
+                  Staff Belum Pulang
+                  @else
+                  Staff Tidak Hadir
+                  @endif
                   </td>
                   <td>
-                    edit[x]
+                  <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
                   </td>
+                @endforeach
+                @endif
                 </tr>
               </tbody>
             </table>

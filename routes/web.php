@@ -78,6 +78,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 	Route::get('/absen','AbsenController@home');
+	Route::post('/absen/cek','AbsenController@cek');
 	Route::get('/datang/{id}','AbsenController@datang');
 	Route::get('/pulang/{id}','AbsenController@pulang');
 
