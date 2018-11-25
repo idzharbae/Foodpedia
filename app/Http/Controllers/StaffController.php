@@ -39,13 +39,13 @@ class StaffController extends Controller
     		'name'=>'required',
             'age'=>'required',
             'jabatan'=>'required'
-    	]);
+        ]);
         $staff = Staff::find($id);
         $staff->name = $request->input('name');
         $staff->age = $request->input('age');
         $staff->jabatan = $request->input('jabatan');
-    	$staff->save();
-        return redirect('/')->with('info','staff Updated Successfully!');
+        $staff->save();
+        return redirect('/admin/staff')->with('info','staff Updated Successfully!');
     }
     public function read($id){
     	$staff=Staff::find($id);

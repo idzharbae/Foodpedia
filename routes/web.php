@@ -58,6 +58,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::get('/staff','StaffController@home');
 	Route::post('/staff/save','StaffController@add');
+	Route::post('/staff/update/{id}','StaffController@edit');
 
 	Route::get('/testimoni','TestimoniController@home');
 

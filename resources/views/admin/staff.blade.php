@@ -52,8 +52,14 @@ document.onreadystatechange = () => {
                         </th>
                       </thead>
                       <tbody>
-                      @foreach($staff as $human)
+                      <?php
+                      $counter=0;
+                      ?>
+                      @foreach($staff->all() as $human)
                         <tr>
+                        <?php
+                        $counter++;
+                        ?>	
                           <td>
                             {{$human->name}}
                           </td>
@@ -64,9 +70,111 @@ document.onreadystatechange = () => {
                             {{$human->jabatan}}
                           </td>
                           <td>
-                            <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
+                            <p><a href = "#" data-toggle="modal" data-target="#readArt-{{$human}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$human->id}}"><i class="material-icons">cancel</i></a></p>
                           </td>
+                          <div id="readArt-{{$human}}" class="modal fade" role="dialog" >
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Edit {{ $human->name }} Data</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/staff/update/'.$human->id) }}" enctype="multipart/form-data" >
+                                      {{ csrf_field() }}
+                                      <div class="row" style="margin-top: 20px;">
+                                        <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Nama</label>
+                                            <input type="text" class="form-control" name="name" value="{{$human->name}}">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Umur</label>
+                                            <input type="number" class="form-control" name = "age" value="{{$human->age}}">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-5" style="margin-top: 20px;">
+                                          <div class="form-group">
+                                            <label>Jabatan</label>
+                                            <select style="margin-top: 20px;" name="jabatan" class="col-md-5">
+                                            @if($human->jabatan == "CEO"){
+                                              <option value="CEO" selected>CEO</option>}
+                                            @else{
+                                              <option value="CEO">CEO</option>
+                                            }
+                                            @endif
+                                            @if($human->jabatan == "Chef"){
+                                              <option value="Chef" selected>Chef</option>}
+                                            @else{
+                                              <option value="Chef">Chef</option>
+                                            }
+                                            @endif
+                                            @if($human->jabatan == "Cleaning Service"){
+                                              <option value="Cleaning Service" selected>Cleaning Service</option>}
+                                            @else{
+                                              <option value="Cleaning Service">Cleaning Service</option>
+                                            }
+                                            @endif
+                                            @if($human->jabatan == "Kasir"){
+                                              <option value="Kasir" selected>Kasir</option>}
+                                            @else{
+                                              <option value="Kasir">Kasir</option>
+                                            }
+                                            @endif
+                                            </select>
+                                          </div>
+                                        </div>
+                                    </div><br><br>
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary pull-left">Update Data</button>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    </form>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            {{-- Confirm Delete --}}
+                              <div class="modal fade" id="modal-delete-{{$human->id}}" tabIndex="-1">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">
+                                        ×
+                                      </button>
+                                      <h4 class="modal-title">Please Confirm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="lead">
+                                        <i class="fa fa-question-circle fa-lg"></i>  
+                                        Are you sure you want to delete this Court?
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <form method="POST" action="">
+                                        {{ csrf_field() }}
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-danger">
+                                          <i class="fa fa-times-circle"></i> Yes
+                                        </button>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </tr>
+                        
                       @endforeach
                       </tbody>
                     </table>
