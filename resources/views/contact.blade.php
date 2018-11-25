@@ -9,7 +9,8 @@
         <div class="container">
           <div class="form">
             <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
+            <form action="{{ url('/contact') }}" enctype="multipart/form-data" method="POST" role="form" class="contactForm">
+              {{ csrf_field() }}
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
