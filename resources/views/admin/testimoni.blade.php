@@ -70,48 +70,6 @@ document.onreadystatechange = () => {
                           </td>
                         </tr>
                         @endforeach
-                        <tr>
-                          <td>
-                            Alvin Reinaldo
-                          </td>
-                          <td>
-                            Keren banget webnya
-                          </td>
-                          <td>
-                            img
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Pencinta Nasgor
-                          </td>
-                          <td>
-                            Nasgor disini enak.
-                          </td>
-                          <td>
-                            img
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Netizen
-                          </td>
-                          <td>
-                            Web kayak gini anak sd juga bisa bikin.
-                          </td>
-                          <td>
-                            img
-                          </td>
-                          <td>
-                            edit[x]
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>

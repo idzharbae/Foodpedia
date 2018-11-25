@@ -1,4 +1,4 @@
-<div id="foodmenu" class="parallax pricing">
+<div id="special-offser" class="parallax pricing">
         <div class="container inner">
             <h2 class="section-title text-center">Menu</h2>
             <p class="lead main text-center">Our recommended menu</p>

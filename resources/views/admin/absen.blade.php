@@ -136,38 +136,10 @@ document.onreadystatechange = () => {
                     Alvin Reinaldo
                   </td>
                   <td>
-                    Keren banget webnya
+                    Jam 8
                   </td>
                   <td>
-                    img
-                  </td>
-                  <td>
-                    edit[x]
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Pencinta Nasgor
-                  </td>
-                  <td>
-                    Nasgor disini enak.
-                  </td>
-                  <td>
-                    img
-                  </td>
-                  <td>
-                    edit[x]
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Netizen
-                  </td>
-                  <td>
-                    Web kayak gini anak sd juga bisa bikin.
-                  </td>
-                  <td>
-                    img
+                    Jam 9
                   </td>
                   <td>
                     edit[x]

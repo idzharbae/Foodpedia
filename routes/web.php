@@ -11,9 +11,12 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+Route::get('/', 'MainPageController@home');
 
 Route::get('/menu', function () {
     return view('menu.menu');
