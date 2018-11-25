@@ -30,7 +30,7 @@ class AbsenController extends Controller
         $time = $request->input('timereq');
         $queryT = date('Y-m-d', strtotime($time));
         $test = Absen::where('save_date',$time)->get();
-        return view('admin.absen',compact('staff','absen','test'));
+        return view('admin.absen',compact('staff','absen','test','queryT'));
     }
     public function datang($id){
         

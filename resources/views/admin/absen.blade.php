@@ -26,7 +26,7 @@ document.onreadystatechange = () => {
 
 <div class="tab-content">
 
-<div id="absen" class="tab-pane active">
+<div id="absen" class="tab-pane {{ $test==null ? 'active' : '' }}">
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -46,9 +46,6 @@ document.onreadystatechange = () => {
               </th>
               <th>
                 Kehadiran Sore
-              </th>
-              <th>
-                Status
               </th>
             </thead>
             <tbody>
@@ -77,9 +74,6 @@ document.onreadystatechange = () => {
                 STAFF BELUM HADIR
                 @endif
                 </td>
-                <td>
-                  <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
-                </td>
               </tr>
             @endforeach
             </tbody>
@@ -91,7 +85,7 @@ document.onreadystatechange = () => {
 </div>
 </div>
 
-<div id="absendulu" class="tab-pane">
+<div id="absendulu" class="tab-pane {{ $test==null ? '' : 'active' }}">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -106,7 +100,7 @@ document.onreadystatechange = () => {
             <div class="row" style="margin-top: 20px;">
               <div class="col-md-1">
                 <div class="form-group">
-                <input type="date" id="absen" name="timereq" value="<?php echo date('Y-m-d'); ?>" min="2018-01-01" max="2018-12-31">
+                <input type="date" id="timereq" name="timereq" value='{{$test == null? date("Y-m-d") : $queryT }}' min="2018-01-01" max="2018-12-31">
                 </div>
               </div>
           </div>
@@ -125,9 +119,6 @@ document.onreadystatechange = () => {
                 </th>
                 <th>
                   Jam Pulang
-                </th>
-                <th>
-                  Status
                 </th>
               </thead>
               <tbody>
@@ -152,9 +143,6 @@ document.onreadystatechange = () => {
                   @else
                   Staff Tidak Hadir
                   @endif
-                  </td>
-                  <td>
-                  <p><a href = "#"><i class="material-icons">edit</i></a> <a href = "#"><i class="material-icons">cancel</i></a></p>
                   </td>
                 @endforeach
                 @endif
