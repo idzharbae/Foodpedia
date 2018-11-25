@@ -4,7 +4,7 @@
             <h2 class="section-title text-center">Menu</h2>
             <p class="lead main text-center">Our recommended menu</p>
             <div class="row">
-              <div class="swiper-container main-slider" id="foodmenu">
+              <div class="swiper-container main-slider" id="foodmenu" style="height: 500px">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slider-bg-position" data-hash="slide1">
                       <div class="baner">
