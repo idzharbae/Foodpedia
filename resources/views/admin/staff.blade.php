@@ -67,7 +67,7 @@ document.onreadystatechange = () => {
                             <p><a href = "#" data-toggle="modal" data-target="#readArt-{{$human}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$human->id}}"><i class="material-icons">cancel</i></a></p>
                           </td>
                           <div id="readArt-{{$human}}" class="modal fade" role="dialog" >
-                              <div class="modal-dialog">
+                              <div class="modal-dialog" >
                                 <div class="modal-content">
                                   <div class="modal-header">
                                     <h5 class="modal-title">Edit {{ $human->name }} Data</h5>
@@ -75,7 +75,7 @@ document.onreadystatechange = () => {
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <div class="modal-body">
+                                  <div class="modal-body" >
                                     <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/staff/update/'.$human->id) }}" enctype="multipart/form-data" >
                                       {{ csrf_field() }}
                                       <div class="row" style="margin-top: 20px;">
