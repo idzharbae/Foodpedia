@@ -13,8 +13,8 @@ class BakuController extends Controller
         $this->middleware('auth');
     }
     public function home(){
-    	$baku = Baku::all();
-    	return view('admin.bahan', ['baku'=>$baku]);
+        $baku = Baku::all();
+        return view('admin.bahan', ['baku'=>$baku]);
     }
 
     public function add(Request $request){
@@ -34,14 +34,14 @@ class BakuController extends Controller
     	return view('update', ['baku'=>$baku]);
     }
     public function edit(Request $request, $id){
-    	$this->validate($request,[
-    		'name'=>'required',
+        $this->validate($request,[
+            'name'=>'required',
             'total'=>'required'
-    	]);
+        ]);
         $baku = Baku::find($id);
         $baku->name = $request->input('name');
         $baku->total = $request->input('total');
-    	$baku->save();
+        $baku->save();
         return redirect('/admin/bahan')->with('info','Menu Updated Successfully!');
     }
     public function read($id){

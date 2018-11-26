@@ -49,7 +49,7 @@ document.onreadystatechange = () => {
                           Jumlah
                         </th>
                         <th>
-                          Tanggal Beli
+                          Terakhir Diupdate
                         </th>
                         <th>
                           Status

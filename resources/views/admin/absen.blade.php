@@ -100,7 +100,7 @@ document.onreadystatechange = () => {
             <div class="row" style="margin-top: 20px;">
               <div class="col-md-1">
                 <div class="form-group">
-                <input type="date" id="timereq" name="timereq" value='{{$test == null? date("Y-m-d") : $queryT }}' min="2018-01-01" max="2018-12-31">
+                <input type="date" id="timereq" name="timereq" value='{{$test == null? date("Y-m-d") : $queryT }}' min="1945-01-01" max='{{date("Y-m-d")}}'>
                 </div>
               </div>
           </div>
