@@ -1,7 +1,11 @@
 @extends('layout.adminlayout')
 
 @section('content')
-
+@if(session()->has('info'))
+      <div class="alert alert-success">
+          {{ session()->get('info') }}
+      </div>
+    @endif
   <ul id="tabscript" class="nav nav-tabs" >
     <li class="tabss"><a data-toggle="tab" href="#member">Daftar Member</a></li>
     <li class="tabss"><a data-toggle="tab" href="#tambahmember">Tambah Member</a></li>

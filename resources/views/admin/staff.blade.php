@@ -18,7 +18,11 @@ document.onreadystatechange = () => {
 </script>
 
 @section('content')
-
+@if(session()->has('info'))
+      <div class="alert alert-success">
+          {{ session()->get('info') }}
+      </div>
+    @endif
     <ul id="tabscript" class="nav nav-tabs" >
       <li class="tabss"><a data-toggle="tab" href="#karyawan">Daftar Karyawan</a></li>
       <li class="tabss"><a data-toggle="tab" href="#tambah">Tambah Karyawan</a></li>
