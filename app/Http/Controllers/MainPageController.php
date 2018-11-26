@@ -8,9 +8,11 @@ use App\Faq;
 use App\Menu;
 use App\Testimoni;
 use App\Contact;
+use App\Kolegial;
 
 class MainPageController extends Controller
 {
+  // GET request main page
   public function home(){
     $faq = Faq::all();
     $menu = Menu::all();
@@ -22,6 +24,8 @@ class MainPageController extends Controller
       'testimoni' => $testimoni
     ]);
   }
+
+  // POST request contact
   public function contact(Request $request){
     $this->validate($request,
       [
@@ -37,6 +41,27 @@ class MainPageController extends Controller
     $contact->subject = $request->input('subject');
     $contact->message = $request->input('message');
     $contact->save();
-    return redirect("/")->with('info_success_contact', 'Thanks For your Message!');
+    return redirect("/")->with('info_success_contact', 'Terima kasih untuk pesannya!');
+  }
+
+  // POST request kolegial
+  public function kolegial(Request $request){
+    $this->validate($request,
+      [
+        'Fname'=>'required',
+        'Lname'=>'required',
+        'email'=>'required',
+        'phone'=>'required',
+        'rank'=>'required'
+      ]
+    );
+    $kolegial = new Kolegial;
+    $kolegial->Fname = $request->input('Fname');
+    $kolegial->Lname = $request->input('Lname');
+    $kolegial->email = $request->input('email');
+    $kolegial->phone = $request->input('phone');
+    $kolegial->rank = $request->input('rank');
+    $kolegial->save();
+    return redirect('/')->with('info_success_kolegial', 'Terima kasih telan memesan Kolegial');
   }
 }

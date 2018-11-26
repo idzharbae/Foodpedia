@@ -18,6 +18,7 @@ Route::get('/', function () {
 */
 Route::get('/', 'MainPageController@home');
 Route::post('/contact', 'MainPageController@contact');
+Route::post('/kolegial', 'MainPageController@kolegial');
 
 Route::get('/menu', function () {
     return view('menu.menu');

@@ -17,7 +17,6 @@ class MenuController extends Controller
     	$menu = Menu::all();
     	return view('admin.menu', ['menu'=>$menu]);
     }
-
     public function add(Request $request){
         // dd($request);
     	$this->validate($request,[
@@ -52,11 +51,9 @@ class MenuController extends Controller
     public function read($id){
     	$menu=Menu::find($id);
     	return view('read', ['menu'=>$menu]);
-
     }
     public function delete($id){
     	Menu::where('id',$id)->delete();
     	return redirect('/admin/menu')->with('info','Menu Deleted Successfully!');
     }
-
 }

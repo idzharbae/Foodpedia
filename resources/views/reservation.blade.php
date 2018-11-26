@@ -45,19 +45,19 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <form class="form form-table" method="post" name="">
+                    <form action="{{ url('/kolegial') }}" class="form form-table" method="post" name="">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <h4>Fill the form for table reservation (all fields required)</h4>
                         </div>
-
                         <div class="row">
                           <div class="col-lg-6 col-md-6 form-group">
                             <label class="sr-only" for="first_name1">first name</label>
-                            <input class="form-control hint" type="text" id="first_name1" name="first_name" placeholder="First name" required="">
+                            <input class="form-control hint" type="text" id="first_name1" name="Fname" placeholder="First name" required="">
                           </div>
                           <div class="col-lg-6 col-md-6 form-group">
                             <label class="sr-only" for="last_name1">last name</label>
-                            <input class="form-control hint" type="text" id="last_name1" name="last_name" placeholder="Last name" required="">
+                            <input class="form-control hint" type="text" id="last_name1" name="Lname" placeholder="Last name" required="">
                           </div>
                         </div>
                         <div class="row">
@@ -72,22 +72,10 @@
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="reserv_date1">reservation date</label>
-                            <input class="form-control datepicker hasDatepicker hint" type="text" id="reserv_date1" name="reserv_date" placeholder="Reservation date" required="">
+                            <input type="radio" id="alt_reserv_date1" name="rank" required="" value="Silver" checked> Silver
                           </div>
                           <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="numb_guests1">number of guests</label>
-                            <input class="form-control hint" type="text" id="numb_guests1" name="numb_guests" placeholder="Number of guests" required="">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="alt_reserv_date1">time from</label>
-                            <input class="form-control datepicker hasDatepicker hint" type="text" id="alt_reserv_date1" name="alt_reserv_date" placeholder="Time from" required="">
-                          </div>
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="time1">time</label>
-                            <input class="form-control timepicker ui-timepicker-input hint" type="text" id="time1" name="time" placeholder="Time to" required="" autocomplete="off">
+                            <input type="radio" id="time1" name="rank" required="" valud="Gold"> Gold
                           </div>
                         </div>
                         <div class="row">
