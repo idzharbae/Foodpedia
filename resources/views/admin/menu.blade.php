@@ -47,6 +47,9 @@ document.onreadystatechange = () => {
                           Harga
                         </th>
                         <th>
+                          Gambar
+                        </th>
+                        <th>
                           Status
                         </th>
                       </thead>
@@ -63,6 +66,10 @@ document.onreadystatechange = () => {
                             {{$item->harga}}
                           </td>
                           <td>
+                            <img class="img-responsive img-cover-profile" src="{{asset($item->image)}}" alt=""
+                            style="max-width:100px; max-height:100px">
+                          </td>
+                          <td>
                             <p><a href = "#" data-toggle="modal" data-target="#readArt-{{$item}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$item->id}}"><i class="material-icons">cancel</i></a></p>
                           </td>
                           <div id="readArt-{{$item}}" class="modal fade" role="dialog" >
@@ -75,7 +82,7 @@ document.onreadystatechange = () => {
                                     </button>
                                   </div>
                                   <div class="modal-body">
-                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/faq/update/'.$item->id) }}" enctype="multipart/form-data" >
+                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/menu/update/'.$item->id) }}" enctype="multipart/form-data" >
                                       {{ csrf_field() }}
                                       <div class="row" style="margin-top: 20px;">
                                         <div class="col-md-5">
@@ -89,7 +96,7 @@ document.onreadystatechange = () => {
                                       <div class="col-md-5">
                                           <div class="form-group">
                                             <label>Rekomendasi^</label>
-                                            <select style="margin-top: 20px;" name="recommended" class="col-md-2">
+                                            <select style="margin-top: 20px;" name="recommended" class="col-md-5">
                                             @if($item->recommended == "Ya")
                                               <option value="Ya" selected>Ya</option>
                                             @else
@@ -113,6 +120,15 @@ document.onreadystatechange = () => {
                                           </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                      <div class="col-md-5">
+                                          <div>
+                                            <label>Gambar</label><br>
+                                            <img class="img-responsive img-cover img-center mb-2" id="preview" src="{{asset($item->image)}}" style="max-height:400px; max-width: 400px;" >
+                                          <input type="file" name="image" id="img" required value="{{$item->name}}">
+                                          </div>
+                                        </div>
+                                    </div>
                                     <div class="modal-footer">
                                       <button type="submit" class="btn btn-primary pull-left">Update Data</button>
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -127,23 +143,24 @@ document.onreadystatechange = () => {
                               <div class="modal fade" id="modal-delete-{{$item->id}}" tabIndex="-1">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">
-                                        ×
-                                      </button>
-                                      <h4 class="modal-title">Please Confirm</h4>
-                                    </div>
+                                   <div class="modal-header">
+                                    <h5 class="modal-title">Delete {{ $item->name }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
                                     <div class="modal-body">
                                       <p class="lead">
                                         <i class="fa fa-question-circle fa-lg"></i>  
                                         Are you sure you want to delete this Court?
                                       </p>
-                                    </div>
-                                    <div class="modal-footer">
-				                                <a href="{{ url('/admin/faq/delete/'.$item->id) }}" class="btn btn-secondary">Delete</a>
+                                      <div class="modal-footer">
+                                        <a href="{{ url('/admin/menu/delete/'.$item->id) }}" class="btn btn-danger">Delete</a>
                                         <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">Close</button>
+                                      </div>
                                     </div>
+                                    
                                   </div>
                                 </div>
                               </div>
@@ -199,6 +216,15 @@ document.onreadystatechange = () => {
                               <input type="number" class="form-control" name="harga">
                             </div>
                           </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-5">
+                            <div>
+                              <label>Gambar</label><br>
+                              <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="max-height:400px; max-width: 400px;" >
+                             <input type="file" name="image" id="img" required>
+                            </div>
+                          </div>
                       </div><br><br>
                       <button type="submit" class="btn btn-primary pull-left">Tambah Menu</button>
                       </form>
@@ -213,4 +239,23 @@ document.onreadystatechange = () => {
 
       </div>
 
+@endsection
+
+@section('script')
+ <script type="text/javascript">
+    function preview(input) {
+        if (input.files && input.files[0]) {
+            var freader = new FileReader();
+            freader.onload = function (e) {
+                $("#preview").show();
+                $('#preview').attr('src', e.target.result);
+            }
+            freader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#img").change(function(){
+        preview(this);
+    });
+</script>
 @endsection

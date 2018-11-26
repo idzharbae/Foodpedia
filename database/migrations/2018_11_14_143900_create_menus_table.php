@@ -18,6 +18,7 @@ class CreateMenusTable extends Migration
             $table->string('name');
             $table->string('recommended');
             $table->integer('harga');
+            $table->string('image');
             $table->timestamps();
         });
     }

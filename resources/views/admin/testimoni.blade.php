@@ -120,22 +120,23 @@ document.onreadystatechange = () => {
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">
-                                        ×
-                                      </button>
-                                      <h4 class="modal-title">Please Confirm</h4>
-                                    </div>
+                                    <h5 class="modal-title">Delete {{ $item->name }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
                                     <div class="modal-body">
                                       <p class="lead">
                                         <i class="fa fa-question-circle fa-lg"></i>  
                                         Are you sure you want to delete this Court?
                                       </p>
-                                    </div>
-                                    <div class="modal-footer">
-				                                <a href="{{ url('/admin/testimoni/delete/'.$item->id) }}" class="btn btn-secondary">Delete</a>
+                                      <div class="modal-footer">
+                                        <a href="{{ url('/admin/testimoni/delete/'.$item->id) }}" class="btn btn-danger">Delete</a>
                                         <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">Close</button>
                                     </div>
+                                    </div>
+                                    
                                   </div>
                                 </div>
                               </div>
@@ -181,14 +182,14 @@ document.onreadystatechange = () => {
                       		</div>
                     	</div>
                     	<div class="row">
-                    		<div class="col-md-5">
-                      		  <div>
-                      		    <label>Gambar</label><br>
-                      		    <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="max-height:400px; max-width: 400px;" >
-                      		   <input type="file" name="image" id="img" required>
-                      		  </div>
-                      		</div>
-                    	</div><br><br>
+                        <div class="col-md-5">
+                            <div>
+                              <label>Gambar</label><br>
+                              <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="max-height:400px; max-width: 400px;" >
+                             <input type="file" name="image" id="img" required>
+                            </div>
+                          </div>
+                      </div><br><br>
                     	<button type="submit" class="btn btn-primary pull-left">Tambah Testimoni</button>
                       </form>
                     </table>

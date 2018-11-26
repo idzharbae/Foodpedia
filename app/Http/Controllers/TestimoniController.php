@@ -65,7 +65,7 @@ class TestimoniController extends Controller
         if($exist){
             Storage::disk('local')->delete('testimoni',$testimoni->image);
         }
-    	$testimoni->delete();
+        $testimoni->delete();
     	return redirect('/admin/testimoni')->with('info','Testimoni Deleted Successfully!');
     }
 }
