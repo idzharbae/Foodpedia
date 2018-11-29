@@ -8,8 +8,8 @@ class DashboardController extends Controller
 {
     //
     public function home(){
-    	$all  = Baku::all();
-    	return view('admin.dashboard',compact('all'));
+    	$all  = Baku::all()->sortByDesc('updated_at');
+        return view('admin.dashboard',compact('all'));
     }
     public function chart()
       {

@@ -1,7 +1,6 @@
 @extends('layout.adminlayout')
 
 @section('content')
-
 <div class="row">
   <div class="col-md-6">
     <div class="card card-chart">
@@ -23,7 +22,23 @@
       </div>
       <div class="card-footer">
         <div class="stats">
-          <i class="material-icons">access_time</i> updated 4 minutes ago
+          <i class="material-icons">access_time</i> dirubah 
+          @php
+          	$diff = strtotime(date('Y-m-d H:i:s')) - strtotime($all[0]->updated_at);
+          	if($diff < 60)
+          		echo $diff.' detik lalu.' ;
+          	else if(intdiv($diff, 60) < 60)
+          		echo intdiv($diff, 60).' menit lalu.';
+          	else if(intdiv($diff, 3600) < 24)
+          		echo intdiv($diff, 3600).' jam lalu.';
+          	else if(intdiv($diff, 86400) < 30)
+          		echo intdiv($diff, 86400).' hari lalu.';
+          	else if(intdiv($diff, 2592000) < 12)
+          		echo intdiv($diff, 2592000).' bulan lalu.';
+          	else
+          		echo '>1 tahun lalu.';
+
+          @endphp
         </div>
       </div>
     </div>
