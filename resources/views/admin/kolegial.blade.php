@@ -1,11 +1,6 @@
 @extends('layout.adminlayout')
 
 @section('content')
-@if(session()->has('info'))
-      <div class="alert alert-success">
-          {{ session()->get('info') }}
-      </div>
-    @endif
   <ul id="tabscript" class="nav nav-tabs" >
     <li class="tabss"><a data-toggle="tab" href="#member">Daftar Member</a></li>
     <li class="tabss"><a data-toggle="tab" href="#tambahmember">Tambah Member</a></li>
@@ -13,7 +8,7 @@
 
     <div class="tab-content">
 
-      <div id="member" class="tab-pane active">
+      <div id="member" class="tab-pane {{ count($errors)==0 ? 'active' : '' }}">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -200,7 +195,7 @@
           </div>
         </div>
 
-        <div id="tambahmember" class="tab-pane">
+        <div id="tambahmember" class="tab-pane {{ count($errors)>0 ? 'active' : '' }}">
           <div class="row">
             <div class="col-md-12">
               <div class="card card-plain">

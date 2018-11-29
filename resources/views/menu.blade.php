@@ -66,7 +66,7 @@
                 </div> -->
             </div>
           </br>
-            <button type="submit" class="btn btn-danger btn-lg" onclick="location.href='/menu';">More Menu</button>
+            <button onclick="location.href='{{ url('menu') }}'"class="btn btn-danger btn-lg" >More Menu</button>
         </div>
 
         <!-- /.container -->

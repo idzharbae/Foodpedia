@@ -45,6 +45,18 @@
       <div class="content">
         <div class="container-fluid">
           <!-- content here -->
+          @if(session()->has('info'))
+      <div class="alert alert-success">
+          {{ session()->get('info') }}
+      </div>
+    @endif
+    @if(count($errors)>0)
+        @foreach($errors->all() as $error)
+            <div class="alert alert-dismissible alert-danger">
+              {{$error}}
+            </div>
+        @endforeach
+    @endif
           @yield('content')
         </div>
       </div>

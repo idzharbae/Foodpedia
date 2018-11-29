@@ -21,7 +21,7 @@ class TestimoniController extends Controller
     	$this->validate($request,[
     		'name'=>'required',
             'message'=>'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
     	]);
     	$testimoni = new Testimoni;
     	$testimoni->name = $request->input('name');

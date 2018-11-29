@@ -23,7 +23,7 @@ class MenuController extends Controller
     		'name'=>'required',
             'recommended'=>'required',
             'harga' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
     	]);
     	$menu = new Menu;
     	$menu->name = $request->input('name');

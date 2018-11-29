@@ -18,11 +18,6 @@ document.onreadystatechange = () => {
 </script>
 
 @section('content')
-@if(session()->has('info'))
-      <div class="alert alert-success">
-          {{ session()->get('info') }}
-      </div>
-    @endif
   <ul id="tabscript" class="nav nav-tabs" >
     <li class="tabss"><a data-toggle="tab" href="#bahan">Daftar Bahan Baku</a></li>
     <li class="tabss"><a data-toggle="tab" href="#tambahbahan">Tambah Bahan Baku</a></li>
@@ -30,7 +25,7 @@ document.onreadystatechange = () => {
 
         <div class="tab-content">
 
-        <div id="bahan" class="tab-pane active">
+        <div id="bahan" class="tab-pane {{ count($errors)==0 ? 'active' : '' }}">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -146,7 +141,7 @@ document.onreadystatechange = () => {
         </div>
 
 
-        <div id="tambahbahan" class="tab-pane">
+        <div id="tambahbahan" class="tab-pane {{ count($errors)>0 ? 'active' : '' }}">
           <div class="row">
             <div class="col-md-12">
               <div class="card card-plain">

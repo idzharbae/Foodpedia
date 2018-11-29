@@ -15,18 +15,13 @@ document.onreadystatechange = () => {
 };
 </script>
 @section('content')
-@if(session()->has('info'))
-      <div class="alert alert-success">
-          {{ session()->get('info') }}
-      </div>
-    @endif
 <ul id="tabscript" class="nav nav-tabs" >
     <li class="tabss"><a data-toggle="tab" href="#register">Register Admin</a></li>
     <li class="tabss"><a data-toggle="tab" href="#list">List Admin</a></li>
 </ul>
 <div class="tab-content">
 
-<div id="register" class="tab-pane active">
+<div id="register" class="tab-pane {{ count($errors)==0 ? 'active' : '' }}">
   <div class="row">
     <div class="col-md-12">
       <div class="card card-plain">
@@ -107,7 +102,7 @@ document.onreadystatechange = () => {
     </div>
   </div>
 </div>
-<div id="list" class="tab-pane">
+<div id="list" class="tab-pane {{ count($errors)>0 ? 'active' : '' }}">
   <div class="row">
     <div class="col-md-12">
       <div class="card">

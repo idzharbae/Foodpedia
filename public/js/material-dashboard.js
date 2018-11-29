@@ -235,20 +235,20 @@ md = {
 
 
       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
       var dataWebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+        labels: Name,
         series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+          Total
 
         ]
       };
+      console.log(dataWebsiteViewsChart);
       var optionsWebsiteViewsChart = {
         axisX: {
           showGrid: false
         },
         low: 0,
-        high: 1000,
+        high: 125,
         chartPadding: {
           top: 0,
           right: 5,

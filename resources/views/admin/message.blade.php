@@ -1,17 +1,12 @@
 @extends('layout.adminlayout')
 
 @section('content')
-@if(session()->has('info'))
-      <div class="alert alert-success">
-          {{ session()->get('info') }}
-      </div>
-    @endif
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Daftar</h4>
-                  <p class="card-category">Daftar FAQ yang sudah dibuat.</p>
+                  <p class="card-category">Daftar pesan masuk.</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">

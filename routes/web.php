@@ -29,9 +29,8 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/', function () {
     	return view('admin.dashboard');
 	});
-	Route::get('/dashboard', function () {
-	    return view('admin.dashboard');
-	});
+	Route::get('/dashboard', 'DashboardController@home');
+	Route::get('/dashboard/chart', 'DashboardController@chart');
 
 	Route::get('/bahan', function () {
 	    return view('admin.bahan');

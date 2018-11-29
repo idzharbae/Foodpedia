@@ -15,6 +15,7 @@
 
  */
 
+
 (function() {
   isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
@@ -26,6 +27,7 @@
   } else {
     $('html').addClass('perfect-scrollbar-off');
   }
+
 })();
 
 
@@ -175,7 +177,6 @@ md = {
   },
 
   initDashboardPageCharts: function() {
-
     if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
       /* ----------==========     Daily Sales Chart initialization    ==========---------- */
 
@@ -235,12 +236,20 @@ md = {
 
 
       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
+      var url = "{{url('/admin/dashboard/chart')}}";
+        var Name = new Array();
+        var Total = new Array();
+        $(document).ready(function(){
+          $.get(url, function(response){
+            response.forEach(function(data){
+                Name.push(data.name);
+                Total.push(data.total);
+            });
 
       var dataWebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+        labels: Name,
         series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
+          Total
         ]
       };
       var optionsWebsiteViewsChart = {
