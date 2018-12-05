@@ -2,7 +2,7 @@
   <div id="foodmenu" class="light-wrapper">
         <div class="container inner">
             <h2 class="section-title text-center">Menu</h2>
-            <p class="lead main text-center">Our recommended menu</p>
+            <p class="lead main text-center">Rekomendasi dari kami</p>
             <div class="row">
               <div class="swiper-container main-slider" id="foodmenu" style="height: 500px">
                 <div class="swiper-wrapper">
@@ -66,7 +66,7 @@
                 </div> -->
             </div>
           </br>
-            <button onclick="location.href='{{ url('menu') }}'"class="btn btn-danger btn-lg" >More Menu</button>
+            <button onclick="location.href='{{ url('food') }}'"class="btn btn-danger btn-lg col-md-12" >Lihat Semua Menu</button>
         </div>
 
         <!-- /.container -->

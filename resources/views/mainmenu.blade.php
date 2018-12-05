@@ -4,18 +4,21 @@
             <p class="lead main text-center">Our recommended menu</p>
 
             <div class="row">
+                @foreach($menu as $item)
+
                 <div class="col-md-6 col-sm-6">
 
                     <div class="pricing-item">
 
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish3.jpg" alt=""></a>
+                        <a href="#"><img class="img-responsive img-thumbnail" src="{{asset($item->image)}}" alt="" style="width: 400px; height:150px;"></a>
 
                         <div class="pricing-item-details">
 
-                            <h3><a href="#">Chicken Fried Rice</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
+                            <h3><a href="#">{{$item->name}}</a></h3>
+                            <br><br><br>
+                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">
+                                    Rp. {{number_format($item->harga)}}.00-
+                            </div>
 
                             <div class="clearfix"></div>
                         </div>
@@ -23,63 +26,7 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish2.jpg" alt=""></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">Hot Fried Chicken</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                        <!--price tag-->
-                        <div class="clearfix"></div>
-                    </div>
-
-                </div>
-                <div class="clearfix visible-md"></div>
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish4.jpg" alt=""></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">Thi Chicken Momo</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish1.jpg" alt=""></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">Cocktail Sushi</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
 

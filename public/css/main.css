@@ -643,6 +643,7 @@ section::before,section::after {
 .modal-body{
     background-color: #212529;
 }
+
 /**
  * Swiper 3.4.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions

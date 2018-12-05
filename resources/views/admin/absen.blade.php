@@ -51,7 +51,7 @@ document.onreadystatechange = () => {
             <tbody>
             @foreach($staff as $human)
               <?php
-              $haha = App\Absen::where('id_staff',$human->id)->first()
+              $haha = App\Absen::where('id_staff',$human->id)->where('save_date',date("Y-m-d"))->first()
               ?>
               <tr>
                 <td>

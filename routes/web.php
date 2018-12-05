@@ -19,15 +19,13 @@ Route::get('/', function () {
 Route::get('/', 'MainPageController@home');
 Route::post('/contact', 'MainPageController@contact');
 Route::post('/kolegial', 'MainPageController@kolegial');
+Route::get('/food', 'MenuController@show');
 
-Route::get('/menu', function () {
-    return view('menu.menu');
-});
 
 // Admin Routes
 Route::group(['prefix'=>'admin'],function(){
 	Route::get('/', function () {
-    	return view('admin.dashboard');
+    	return redirect('/admin/dashboard');
 	});
 	Route::get('/dashboard', 'DashboardController@home');
 	Route::get('/dashboard/chart', 'DashboardController@chart');
@@ -87,4 +85,4 @@ Route::group(['prefix'=>'admin'],function(){
 
 Auth::routes();
 // Route::get('/loginadmin', 'HomeController@index')->name('home');
-Route::get('/home','AdminController@home')->name('home');
+Route::get('/home','DashboardController@home')->name('home');

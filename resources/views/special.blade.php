@@ -1,8 +1,8 @@
 <div id="special-offser" class="parallax pricing">
         <div class="container inner">
 
-            <h2 class="section-title text-center">Special Offers</h2>
-            <p class="lead main text-center">There is no sincerer love than the love of food!</p>
+            <h2 class="section-title text-center">LAYANAN KOLEGIAL</h2>
+            <p class="lead main text-center">Nyaman mengerjakan tugas di ruangan full AC dan WIFI kecepatan tinggi.</p>
 
             <div class="row">
                 <div class="col-md-6 col-sm-6">

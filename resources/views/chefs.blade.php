@@ -2,7 +2,7 @@
         <div class="container inner">
 
             <h2 class="section-title text-center">Testimoni</h2>
-            <p class="lead main text-center">There is no sincerer love than the love of food!</p>
+            <p class="lead main text-center">Apa kata mereka tentang Foodpedia?</p>
 
             <div class="row text-center chefs">
 

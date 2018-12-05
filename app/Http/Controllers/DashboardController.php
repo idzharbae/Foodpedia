@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function home(){
-    	$all  = Baku::all()->sortByDesc('updated_at');
+    	$all  = Baku::orderByDesc('updated_at')->get();
         return view('admin.dashboard',compact('all'));
     }
     public function chart()
