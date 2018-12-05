@@ -56,12 +56,28 @@
                   <div class="card-icon">
                     <i class="fa fa-twitter"></i>
                   </div>
-                  <p class="card-category">Followers</p>
-                  <h3 class="card-title">+245</h3>
+                  <p class="card-category">Member Kolegial</p>
+                  <h3 class="card-title">{{$memberCount}}</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
+                    <i class="material-icons">access_time</i> dirubah 
+                      @php
+                        $diff = strtotime(date('Y-m-d H:i:s')) - strtotime($lastMember[0]->updated_at);
+                        if($diff < 60)
+                          echo $diff.' detik lalu.' ;
+                        else if(intdiv($diff, 60) < 60)
+                          echo intdiv($diff, 60).' menit lalu.';
+                        else if(intdiv($diff, 3600) < 24)
+                          echo intdiv($diff, 3600).' jam lalu.';
+                        else if(intdiv($diff, 86400) < 30)
+                          echo intdiv($diff, 86400).' hari lalu.';
+                        else if(intdiv($diff, 2592000) < 12)
+                          echo intdiv($diff, 2592000).' bulan lalu.';
+                        else
+                          echo '>1 tahun lalu.';
+                      @endphp
+                    
                   </div>
                 </div>
               </div>
