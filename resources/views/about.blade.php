@@ -2,7 +2,7 @@
         <section class="ss-style-top"></section>
         <div class="container inner">
             <h2 class="section-title text-center">About Us</h2>
-            <p class="lead main text-center">Tempat buat about us</p>
+            <p class="lead main text-center">Tempat buat about us {{$check}}</p>
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="box">
             <div class="container">

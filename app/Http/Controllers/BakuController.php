@@ -22,10 +22,12 @@ class BakuController extends Controller
     	$this->validate($request,[
     		'name'=>'required',
         'total'=>'required',
+        'batas'=>'required',
     	]);
     	$baku = new Baku;
     	$baku->name = $request->input('name');
         $baku->total = $request->input('total');
+        $baku->batas = $request->input('batas');
         $baku->save();
     	return redirect('/admin/bahan')->with('info','Baku Saved Successfully!');
     }
@@ -36,11 +38,13 @@ class BakuController extends Controller
     public function edit(Request $request, $id){
         $this->validate($request,[
             'name'=>'required',
-            'total'=>'required'
+            'total'=>'required',
+            'batas'=>'required',
         ]);
         $baku = Baku::find($id);
         $baku->name = $request->input('name');
         $baku->total = $request->input('total');
+        $baku->batas = $request->input('batas');
         $baku->save();
         return redirect('/admin/bahan')->with('info','Menu Updated Successfully!');
     }

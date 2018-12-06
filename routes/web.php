@@ -29,7 +29,7 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 	Route::get('/dashboard', 'DashboardController@home');
 	Route::get('/dashboard/chart', 'DashboardController@chart');
-
+	Route::get('/dashboard/visitor', 'DashboardController@visitor');
 	Route::get('/bahan', function () {
 	    return view('admin.bahan');
 	});

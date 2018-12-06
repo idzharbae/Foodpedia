@@ -9,6 +9,8 @@ use App\Menu;
 use App\Testimoni;
 use App\Contact;
 use App\Kolegial;
+use App\Visitor;
+use Illuminate\Support\Facades\DB;
 
 class MainPageController extends Controller
 {
@@ -17,11 +19,23 @@ class MainPageController extends Controller
     $faq = Faq::all();
     $menu = Menu::all();
     $testimoni = Testimoni::all();
+    $ip = request()->ip();
+    $check = Visitor::whereDate('created_at','=',date('Y-m-d'))->get();
+    if($check->isEmpty()){
+      DB::table('visitors')->insert(
+        ['ip' => $ip,
+          'created_at' =>  \Carbon\Carbon::now(),
+          'updated_at' => \Carbon\Carbon::now(),
+          ]
+      );
+    }
     // return ['faq' => $faq, 'menu' => $menu];
     return view('welcome', [
       'faq' => $faq,
       'menu' => $menu,
-      'testimoni' => $testimoni
+      'testimoni' => $testimoni,
+      'ip' => $ip,
+      'check' => $check,
     ]);
   }
 

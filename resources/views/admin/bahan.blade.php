@@ -44,6 +44,9 @@ document.onreadystatechange = () => {
                           Jumlah
                         </th>
                         <th>
+                          Batas minimal
+                        </th>
+                        <th>
                           Terakhir Diupdate
                         </th>
                         <th>
@@ -60,7 +63,10 @@ document.onreadystatechange = () => {
                             {{$bahan->total}}
                           </td>
                           <td>
-                            {{$bahan->updated_at}}
+                            {{$bahan->batas}}
+                          </td>
+                          <td>
+                            {{$bahan->updated_at}} 
                           </td>
                           <td>
                             <p><a href = "#" data-toggle="modal" data-target="#readArt-{{$bahan}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$bahan->id}}"><i class="material-icons">cancel</i></a></p>
@@ -90,6 +96,14 @@ document.onreadystatechange = () => {
                                           <div class="form-group">
                                             <label>Jumlah</label>
                                             <input type="number" class="form-control" name="total" value = "{{$bahan->total}}">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Batas minimal</label>
+                                            <input type="number" class="form-control" name="batas" value = "{{$bahan->batas}}">
                                           </div>
                                         </div>
                                     </div>
@@ -163,13 +177,21 @@ document.onreadystatechange = () => {
                       		</div>
                     	</div>
                     	<div class="row" style="margin-top: 20px;">
-                    		<div class="col-md-5">
-                      		  <div class="form-group">
-                      		    <label>Jumlah</label>
-                      		    <input type="number" class="form-control" name="total">
-                      		  </div>
-                      		</div>
-                    	</div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Jumlah</label>
+                              <input type="number" class="form-control" name="total">
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Batas minimal</label>
+                              <input type="number" class="form-control" name="batas">
+                            </div>
+                          </div>
+                      </div>
                     </br>
                       <button type="submit" class="btn btn-primary pull-left">Tambah Bahan</button>
                       </form>

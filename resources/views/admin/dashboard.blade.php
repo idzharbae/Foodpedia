@@ -21,6 +21,23 @@
             });
         });
 	});
+    var url = "{{url('/admin/dashboard/visitor')}}";
+        var IpCount = new Array();
+        var HariCount = new Array();
+        var idx = -1;
+        $(document).ready(function(){
+          $.get(url, function(response){
+            response.forEach(function(data){
+                if(HariCount.indexOf(data.created_at.substring(5,10)) == -1){
+                        HariCount.push(data.created_at.substring(5,10));
+                        IpCount.push(1);
+                        idx += 1;
+                    }else{
+                        IpCount[idx] += 1;
+                    }
+            });
+        });
+    });
 setTimeout(function(){
     window.dispatchEvent(new Event('resize'));
 }, 1000);

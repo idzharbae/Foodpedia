@@ -208,18 +208,22 @@ md = {
       /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
 
       dataCompletedTasksChart = {
-        labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
+        labels: HariCount.reverse(),
         series: [
-          [230, 750, 450, 300, 280, 240, 200, 190]
+          IpCount.reverse()
         ]
       };
-
+      var maks = IpCount[0];
+      for (let i = 1, len=IpCount.length; i < len; i++) {
+        let v = IpCount[i];
+        maks = (v > maks) ? v : maks;
+      }
       optionsCompletedTasksChart = {
         lineSmooth: Chartist.Interpolation.cardinal({
           tension: 0
         }),
         low: 0,
-        high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: maks+1, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -239,7 +243,6 @@ md = {
         labels: Name,
         series: [
           Total
-
         ]
       };
       console.log(dataWebsiteViewsChart);

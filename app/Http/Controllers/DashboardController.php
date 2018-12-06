@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Baku;
 use App\Kolegial;
+use App\Visitor;
 use App\Absen;
 use App\Staff;
 use Illuminate\Http\Request;
@@ -26,6 +27,11 @@ class DashboardController extends Controller
       {
         $result = \DB::table('bakus')
                     ->get();
+        return response()->json($result);
+      }
+      public function visitor()
+      {
+        $result = Visitor::select('created_at')->orderByDesc('created_at')->skip(0)->take(7)->get();
         return response()->json($result);
       }
 }
