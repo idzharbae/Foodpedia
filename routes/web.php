@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/', 'MainPageController@home');
 Route::post('/contact', 'MainPageController@contact');
 Route::post('/kolegial', 'MainPageController@kolegial');
-Route::get('/food', 'MenuController@show');
+Route::get('/food', 'MainPageController@show');
 
 
 // Admin Routes

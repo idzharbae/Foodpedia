@@ -25,6 +25,10 @@ class MainPageController extends Controller
     ]);
   }
 
+  public function show(){
+      $menu = Menu::all();
+      return view('menu.menu', compact('menu'));
+  }
   // POST request contact
   public function contact(Request $request){
     $this->validate($request,

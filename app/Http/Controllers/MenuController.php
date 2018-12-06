@@ -17,10 +17,6 @@ class MenuController extends Controller
     	$menu = Menu::all();
     	return view('admin.menu', ['menu'=>$menu]);
     }
-    public function show(){
-        $menu = Menu::all();
-        return view('menu.menu', compact('menu'));
-    }
     public function add(Request $request){
         // dd($request);
     	$this->validate($request,[
