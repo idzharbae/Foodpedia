@@ -18,7 +18,8 @@ class CreateContactsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('subject');
-            $table->string('message');
+            $table->longText('message');
+            $table->boolean('read')->default(false);
             $table->timestamps();
         });
     }

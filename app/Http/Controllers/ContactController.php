@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Contact;
+use Illuminate\Support\Facades\DB;
+
 class ContactController extends Controller
 {
     public function __construct()
@@ -59,5 +61,10 @@ class ContactController extends Controller
     public function delete($id){
     	Contact::where('id',$id)->delete();
     	return redirect('/')->with('info','Menu Deleted Successfully!');
+    }
+
+    public function mark($id)
+    {
+        DB::table('contacts')->where('id', $id)->update(['read' => true]);
     }
 }
