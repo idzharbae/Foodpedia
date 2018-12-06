@@ -36,7 +36,11 @@ Route::group(['prefix'=>'admin'],function(){
 	    return view('admin.absen');
 	});
 
-  Route::get('/bahan','BakuController@home');
+	Route::get('/ss','SlideShowController@show');
+	Route::post('/ss/save','SlideShowController@add');
+	Route::get('/ss/delete/{id}','SlideShowController@delete');
+
+  	Route::get('/bahan','BakuController@home');
 	Route::post('/bahan/save','BakuController@add');
 	Route::post('/bahan/update/{id}','BakuController@edit');
 	Route::get('/bahan/delete/{id}','BakuController@delete');

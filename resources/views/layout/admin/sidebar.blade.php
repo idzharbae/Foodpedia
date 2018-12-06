@@ -71,6 +71,12 @@
               <p>Message</p>
             </a>
           </li>
+          <li class='{{ (Request::path() == "admin/ss") ? "nav-item active" : "nav-item" }}'>
+            <a class="nav-link" href='{{url("/admin/ss")}}'>
+              <i class="material-icons">email</i>
+              <p>Banner</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
