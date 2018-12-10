@@ -48,7 +48,13 @@
                         </label>
                       </div>
                     </td>
-                    <td>{{$tugas->description}}</td>
+
+                    <td>{{$tugas->description}} 
+                      @php
+                        if($tugas->deadline < date("Y-m-d")){ 
+                          echo '<div class="stats"><small><i class="material-icons text-danger">warning</i> (deadline pada '.date("D d-m-Y", strtotime($tugas->deadline) ). ') </small></div>'; 
+                        }
+                      @endphp</td>
                     <td class="td-actions text-right">
                               <a href = "#" data-toggle="modal" data-target="#readArt-{{$tugas->id}}">
                                 <i rel="tooltip" title="Edit Tugas" class="material-icons">edit</i> 
@@ -162,7 +168,12 @@
                         </label>
                       </div>
                     </td>
-                    <td>{{$tugas->description}}</td>
+                    <td>{{$tugas->description}} 
+                      @php
+                        if($tugas->deadline < date("Y-m-d")){ 
+                          echo '<div class="stats"><small><i class="material-icons text-danger">warning</i> (deadline pada '.date("D d-m-Y", strtotime($tugas->deadline) ). ') </small></div>'; 
+                        }
+                      @endphp</td>
                     <td class="td-actions text-right">
                               <a href = "#" data-toggle="modal" data-target="#readArt-{{$tugas->id}}">
                                 <i rel="tooltip" title="Edit Tugas" class="material-icons">edit</i> 
@@ -276,7 +287,12 @@
                         </label>
                       </div>
                     </td>
-                    <td>{{$tugas->description}}</td>
+                    <td>{{$tugas->description}} 
+                      @php
+                        if($tugas->deadline < date("Y-m-d")){ 
+                          echo '<div class="stats"><small><i class="material-icons text-danger">warning</i> (deadline pada '.date("D d-m-Y", strtotime($tugas->deadline) ). ') </small></div>'; 
+                        }
+                      @endphp</td>
                    <td class="td-actions text-right">
                               <a href = "#" data-toggle="modal" data-target="#readArt-{{$tugas->id}}">
                                 <i rel="tooltip" title="Edit Tugas" class="material-icons">edit</i> 

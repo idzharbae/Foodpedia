@@ -12,7 +12,7 @@
                   <div class="stats">
                     @if($task->where('status',0)->where('deadline', '<', date("Y-m-d"))->count() > 0)
                     <i class="material-icons text-danger">warning</i>
-                    Beberapa tugas tidak selesai sebelum deadline.
+                    {{$task->where('status',0)->where('deadline', '<', date("Y-m-d"))->count()}} tugas tidak selesai sebelum deadline.
                     @else
                     <i class="material-icons text-success">check</i>
                     Tidak ada tugas yang lewat deadline.
