@@ -30,7 +30,7 @@
                       </thead>
                       <tbody>
                         @foreach($contact as $pesan)
-                        <tr>
+                        <tr @if($pesan->read == 0) style="background-color: #25344c;" @endif>
                           <td>
                           	{{$pesan->name}}
                           </td>
@@ -88,7 +88,7 @@
                                       </p>
                                       <div class="modal-footer">
                                         <button type="button" class="btn btn-default"
-                                                data-dismiss="modal">Close</button>
+                                                data-dismiss="modal"  onclick="refresh()">Close</button>
                                     </div>
                                     </div>
                                   </div>
@@ -116,6 +116,11 @@
          console.log('success');
        }
      });
+ }
+ function refresh(){
+  setTimeout(function(){
+    location.reload();
+}, 500);
  }
 </script>
 @endsection
