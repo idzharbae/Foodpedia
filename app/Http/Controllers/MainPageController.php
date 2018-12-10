@@ -8,7 +8,7 @@ use App\Faq;
 use App\Menu;
 use App\Testimoni;
 use App\Contact;
-use App\SlideShow;
+use App\Slideshow;
 use App\Kolegial;
 use App\Visitor;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +19,7 @@ class MainPageController extends Controller
   public function home(){
     $faq = Faq::all();
     $menu = Menu::all();
-    $ss = SlideShow::all();
+    $ss = Slideshow::all();
     $testimoni = Testimoni::all();
     $ip = request()->ip();
     $check = Visitor::whereDate('created_at','=',date('Y-m-d'))->get();
