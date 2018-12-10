@@ -63,4 +63,21 @@ class DashboardController extends Controller
             $current->status = 1;
         $current->save();
     }
+    public function editTask(Request $request, $id){
+        $this->validate($request,[
+            'description'=>'required',
+            'group'=>'required',
+            'deadline'=>'required',
+        ]);
+        $task = Task::find($id);
+        $task->description = $request->input('description');
+        $task->group = $request->input('group');
+        $task->deadline = $request->input('deadline');
+        $task->save();
+        return redirect('/admin/dashboard')->with('info','Task Edited Successfully!');
+    }
+    public function deleteTask($id){
+        Baku::where('id',$id)->delete();
+        return redirect('/admin/bahan')->with('info','Menu Deleted Successfully!');
+    }
 }

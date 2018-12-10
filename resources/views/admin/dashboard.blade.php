@@ -10,17 +10,18 @@
 
 @section('script')
 <script>
-	var url = "{{url('/admin/dashboard/chart')}}";
+	var url1 = "{{url('/admin/dashboard/chart')}}";
         var Name = new Array();
         var Total = new Array();
         $(document).ready(function(){
-          $.get(url, function(response){
+          $.get(url1, function(response){
             response.forEach(function(data){
                 Name.push(data.name);
                 Total.push(data.total);
             });
         });
 	});
+
     var url = "{{url('/admin/dashboard/visitor')}}";
         var IpCount = new Array();
         var HariCount = new Array();

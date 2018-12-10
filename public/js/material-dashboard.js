@@ -245,13 +245,18 @@ md = {
           Total
         ]
       };
+      var maks = Total[0];
+      for (let i = 1, len=IpCount.length; i < len; i++) {
+        let v = Total[i];
+        maks = (v > maks) ? v : maks;
+      }
       console.log(dataWebsiteViewsChart);
       var optionsWebsiteViewsChart = {
         axisX: {
           showGrid: false
         },
         low: 0,
-        high: 125,
+        high: maks+10,
         chartPadding: {
           top: 0,
           right: 5,

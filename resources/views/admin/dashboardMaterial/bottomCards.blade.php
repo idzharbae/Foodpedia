@@ -50,12 +50,12 @@
                     </td>
                     <td>{{$tugas->description}}</td>
                     <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
+                              <a href = "#" data-toggle="modal" data-target="#readArt-{{$tugas->id}}">
+                                <i rel="tooltip" title="Edit Tugas" class="material-icons">edit</i> 
+                              </a>
+                              <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$tugas->id}}">
+                                <i rel="tooltip" title="Hapus Tugas" class="material-icons">close</i> 
+                              </a>
                             </td>
                   </tr>
                     @endforeach
@@ -79,12 +79,12 @@
                     </td>
                     <td>{{$tugas->description}}</td>
                     <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
+                              <a href = "#" data-toggle="modal" data-target="#readArt-{{$tugas->id}}">
+                                <i rel="tooltip" title="Edit Tugas" class="material-icons">edit</i> 
+                              </a>
+                              <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$tugas->id}}">
+                                <i rel="tooltip" title="Hapus Tugas" class="material-icons">close</i> 
+                              </a>
                             </td>
                   </tr>
                     @endforeach
@@ -107,15 +107,100 @@
                       </div>
                     </td>
                     <td>{{$tugas->description}}</td>
-                    <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
+                   <td class="td-actions text-right">
+                              <a href = "#" data-toggle="modal" data-target="#readArt-{{$tugas->id}}">
+                                <i rel="tooltip" title="Edit Tugas" class="material-icons">edit</i> 
+                              </a>
+                              <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$tugas->id}}">
+                                <i rel="tooltip" title="Hapus Tugas" class="material-icons">close</i> 
+                              </a>
                             </td>
                   </tr>
+                  <div id="readArt-{{$tugas->id}}" class="modal fade" role="dialog" >
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Edit Tugas - {{ $tugas->id }} Data</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/dashboard/addTask') }}" enctype="multipart/form-data" >
+                                    {{ csrf_field() }}
+                                    <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                        <div class="form-group">
+                                          <label>Deskripsi</label>
+                                          <input type="text" class="form-control" name="description" value='{{$tugas->description}}'>
+                                        </div>
+                                      </div>
+                                      </div>
+                                      <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Tipe</label>
+                                            <select style="margin-top: 20px;" name="group" class="col-md-8">
+                                              @if($tugas->group == 1)
+                                              <option value="1" selected>Bugs</option>
+                                              @else
+                                              <option value="1">Bugs</option>
+                                              @endif
+                                              @if($tugas->group == 2)
+                                              <option value="2" selected>Website</option>
+                                              @else
+                                              <option value="2">Bugs</option>
+                                              @endif
+                                              @if($tugas->group == 3)
+                                              <option value="3" selected>Server</option>
+                                              @else
+                                              <option value="3">Server</option>
+                                              @endif
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                          <label>Deadline</label>
+                                          <input style="margin-top: 20px;" type="date" id="deadline" name="deadline" value='{{$tugas->deadline}}' min='{{date("Y-m-d")}}' max='2100-01-01'>
+                                        </div>
+                                      </div>
+                                  </div><br><br>
+                                  <button type="submit" class="btn btn-primary pull-left">Edit Tugas</button>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </form>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+
+                              <div class="modal fade" id="modal-delete-{{$tugas->id}}" tabIndex="-1">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title">Delete {{ $tugas->name }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                    <div class="modal-body">
+                                      <p class="lead">
+                                        <i class="fa fa-question-circle fa-lg"></i>  
+                                        Are you sure you want to delete this Court?
+                                      </p>
+                                      <div class="modal-footer">
+                                        <a href="{{ url('/admin/dashboard/deleteTask/'.$tugas->id) }}" class="btn btn-danger">Delete</a>
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </div>
                     @endforeach
                                 </tbody>
                               </table>
@@ -176,6 +261,7 @@
                               <div class="modal-dialog">
                                 <div class="modal-content">
                                   <div class="modal-header">
+                                    <h5 class="modal-title">Tambah Tugas Baru</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
