@@ -69,7 +69,7 @@ class DashboardController extends Controller
             'group'=>'required',
             'deadline'=>'required',
         ]);
-        $task = Task::find($id);
+        $task = Tasks::find($id);
         $task->description = $request->input('description');
         $task->group = $request->input('group');
         $task->deadline = $request->input('deadline');
@@ -77,7 +77,7 @@ class DashboardController extends Controller
         return redirect('/admin/dashboard')->with('info','Task Edited Successfully!');
     }
     public function deleteTask($id){
-        Baku::where('id',$id)->delete();
-        return redirect('/admin/bahan')->with('info','Menu Deleted Successfully!');
+        Tasks::where('id',$id)->delete();
+        return redirect('/admin/dashboard')->with('info','Task Deleted Successfully!');
     }
 }

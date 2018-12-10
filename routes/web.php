@@ -31,8 +31,8 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/dashboard/visitor', 'DashboardController@visitor');
 	Route::post('/dashboard/addTask', 'DashboardController@addTask');
 	Route::get('/dashboard/check/{id}', 'DashboardController@check');
-	Route::post('/bahandashboard/updateTask/{id}','BakuController@editTask');
-	Route::get('/dashboard/deleteTask/{id}','BakuController@deleteTask');
+	Route::post('/dashboard/updateTask/{id}','DashboardController@editTask');
+	Route::get('/dashboard/deleteTask/{id}','DashboardController@deleteTask');
 
 	Route::get('/bahan', function () {
 	    return view('admin.bahan');
