@@ -67,8 +67,12 @@
                               Approved
                             @endif
                           </td>
+                          
                           <td>
-                            <p><a href = "{{ url('/admin/kolegial/approve/'.$human->id) }}"><i class="material-icons">check_circle_outline</i></a><a href = "#" data-toggle="modal" data-target="#readArt-{{$human}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$human->id}}"><i class="material-icons">cancel</i></a></p>
+                            @if($human->status==0)
+                            <p><a href = "{{ url('/admin/kolegial/approve/'.$human->id) }}"><i class="material-icons">check_circle_outline</i>
+                            @endif
+                            </a><a href = "#" data-toggle="modal" data-target="#readArt-{{$human}}"><i class="material-icons">edit</i></a> <a href = "#" data-toggle="modal" data-target="#modal-delete-{{$human->id}}"><i class="material-icons">cancel</i></a></p>
                           </td>
                           <div id="readArt-{{$human}}" class="modal fade" role="dialog" >
                               <div class="modal-dialog">

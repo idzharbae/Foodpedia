@@ -9,7 +9,7 @@
         </div>
       
       @foreach($ss as $item)
-        <div class="swiper-slide slider-bg-position" style="background-image: url(../{{$item->image}});" >
+        <div class="swiper-slide slider-bg-position" style="background-image: url(../{{$item->image}});" data-hash="slide{{$item->id+1}}">
         </div>
       @endforeach
       </div>

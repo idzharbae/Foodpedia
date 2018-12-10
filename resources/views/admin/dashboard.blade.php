@@ -42,5 +42,17 @@ setTimeout(function(){
     window.dispatchEvent(new Event('resize'));
 }, 1000);
 </script>
-
+<script>
+  function foo (id) {
+      $.ajax({
+        url:"/admin/dashboard/check/"+id, //the page containing php script
+        type: "GET", //request type
+        success:function(result){
+      setTimeout(function(){// wait for 5 secs(2)
+           location.reload(); // then reload the page.(3)
+      }, 1000); 
+       }
+     });
+ }
+</script>
 @endsection

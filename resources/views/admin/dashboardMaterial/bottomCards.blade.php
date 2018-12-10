@@ -36,111 +36,20 @@
           <div class="tab-pane active" id="profile">
             <table class="table">
               <tbody>
-                <tr>
+                  @foreach($task->where('group',1) as $tugas)
+                  <tr>
                   <td>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="" checked>
+                        <input onclick="foo({{$tugas->id}})" class="form-check-input" type="checkbox" value="" @if($tugas->status == 1) checked @endif>
                           <span class="form-check-sign">
                             <span class="check"></span>
                           </span>
                         </label>
                       </div>
                     </td>
-                    <td>Sign contract for "What are conference organizers afraid of?"</td>
+                    <td>{{$tugas->description}}</td>
                     <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                        <i class="material-icons">edit</i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                        <i class="material-icons">close</i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" value="">
-                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </td>
-                      <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                            <i class="material-icons">edit</i>
-                          </button>
-                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                            <i class="material-icons">close</i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="" checked>
-                                <span class="form-check-sign">
-                                  <span class="check"></span>
-                                </span>
-                              </label>
-                            </div>
-                          </td>
-                          <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                          <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                              <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                              <i class="material-icons">close</i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="tab-pane" id="messages">
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
                               <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
                               </button>
@@ -148,102 +57,71 @@
                                 <i class="material-icons">close</i>
                               </button>
                             </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                    <span class="form-check-sign">
-                                      <span class="check"></span>
-                                    </span>
-                                  </label>
-                                </div>
-                              </td>
-                              <td>Sign contract for "What are conference organizers afraid of?"</td>
-                              <td class="td-actions text-right">
-                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                  <i class="material-icons">edit</i>
-                                </button>
-                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                  <i class="material-icons">close</i>
-                                </button>
-                              </td>
-                            </tr>
+                  </tr>
+                    @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane" id="messages">
+                    <table class="table">
+                      <tbody>
+                        @foreach($task->where('group',2) as $tugas)
+                        <tr>
+                  <td>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input onclick="foo({{$tugas->id}})" class="form-check-input" type="checkbox" value="" @if($tugas->status == 1) checked @endif>
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>{{$tugas->description}}</td>
+                    <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                  </tr>
+                    @endforeach
                           </tbody>
                         </table>
                       </div>
-                      <div class="tab-pane" id="settings">
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div class="form-check">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
-                                      <span class="form-check-sign">
-                                        <span class="check"></span>
-                                      </span>
-                                    </label>
-                                  </div>
-                                </td>
-                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                <td class="td-actions text-right">
-                                  <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                    <i class="material-icons">edit</i>
-                                  </button>
-                                  <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                    <i class="material-icons">close</i>
-                                  </button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <div class="form-check">
-                                    <label class="form-check-label">
-                                      <input class="form-check-input" type="checkbox" value="" checked>
-                                        <span class="form-check-sign">
-                                          <span class="check"></span>
-                                        </span>
-                                      </label>
-                                    </div>
-                                  </td>
-                                  <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                  <div class="tab-pane" id="settings">
+                    <table class="table">
+                      <tbody>
+                        @foreach($task->where('group',3) as $tugas)
+                        <tr>
+                  <td>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input onclick="foo({{$tugas->id}})" class="form-check-input" type="checkbox" value="" @if($tugas->status == 1) checked @endif>
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>{{$tugas->description}}</td>
+                    <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
                             </td>
-                                  <td class="td-actions text-right">
-                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                      <i class="material-icons">edit</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                      <i class="material-icons">close</i>
-                                    </button>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                    <div class="form-check">
-                                      <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="" checked>
-                                          <span class="form-check-sign">
-                                            <span class="check"></span>
-                                          </span>
-                                        </label>
-                                      </div>
-                                    </td>
-                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                    <td class="td-actions text-right">
-                                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                        <i class="material-icons">edit</i>
-                                      </button>
-                                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                        <i class="material-icons">close</i>
-                                      </button>
-                                    </td>
-                                  </tr>
+                  </tr>
+                    @endforeach
                                 </tbody>
                               </table>
                             </div>
                           </div>
+                          <p><a href = "#" data-toggle="modal" data-target="#addTask"><i class="material-icons">add_circle</i> Tambah Tugas</a></p>
                         </div>
                       </div>
                     </div>
@@ -294,3 +172,55 @@
                       </div>
                     </div>
                   </div>
+                    <div id="addTask" class="modal fade" role="dialog" >
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/dashboard/addTask') }}" enctype="multipart/form-data" >
+                                    {{ csrf_field() }}
+                                    <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                        <div class="form-group">
+                                          <label>Deskripsi</label>
+                                          <input type="text" class="form-control" name="description">
+                                        </div>
+                                      </div>
+                                      </div>
+                                      <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Tipe</label>
+                                            <select style="margin-top: 20px;" name="group" class="col-md-8">
+                                              <option value="1" selected>Bugs</option>}
+                                              <option value="2">Website</option>
+                                              <option value="3">Server</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                          <label>Deadline</label>
+                                          <input style="margin-top: 20px;" type="date" id="deadline" name="deadline" value='{{date("Y-m-d")}}' min='{{date("Y-m-d")}}' max='2100-01-01'>
+                                        </div>
+                                      </div>
+                                  </div><br><br>
+                                  <button type="submit" class="btn btn-primary pull-left">Tambah Tugas</button>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </form>
+                                  </div>
+                                  </div>
+                                  
+                                  
+                                </div>
+                              </div>
+                            </div>
+
+
+                    

@@ -15,7 +15,7 @@ class SlideShowController extends Controller
     }
     public function show(){
     	$ss = Slideshow::all();
-    	return view('admin.Slideshow', ['ss'=>$ss]);
+    	return view('admin.slideshow', ['ss'=>$ss]);
     }
 
     public function add(Request $request){

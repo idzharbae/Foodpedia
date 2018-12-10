@@ -363,6 +363,7 @@ class ComposerStaticInit33c62eebb3213f4b48cf0910ee7a4cb5
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Slideshow' => __DIR__ . '/../..' . '/app/Slideshow.php',
         'App\\Staff' => __DIR__ . '/../..' . '/app/Staff.php',
+        'App\\Tasks' => __DIR__ . '/../..' . '/app/Tasks.php',
         'App\\Testimoni' => __DIR__ . '/../..' . '/app/Testimoni.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Visitor' => __DIR__ . '/../..' . '/app/Visitor.php',

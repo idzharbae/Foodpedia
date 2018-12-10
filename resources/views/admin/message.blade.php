@@ -77,15 +77,14 @@
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title">{{$pesan->name}} : {{ $pesan->subject }}</h5>
+                                      <h5 class="modal-title">{{$pesan->name}} : "{{ $pesan->subject }}"</h5>
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
                                     <div class="modal-body">
                                       <p class="lead">
-                                        <i class="fa fa-question-circle fa-lg"></i>  
-                                        {{$pesan->message}}
+                                        Isi pesan : <br><br>{{$pesan->message}}
                                       </p>
                                       <div class="modal-footer">
                                         <button type="button" class="btn btn-default"
