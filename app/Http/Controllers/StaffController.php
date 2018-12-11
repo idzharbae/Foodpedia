@@ -14,7 +14,12 @@ class StaffController extends Controller
     }
     public function home(){
     	$staff = Staff::all();
-    	return view('admin.staff', ['staff'=>$staff]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[1] == '1')
+            return view('admin.staff', ['staff'=>$staff]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur staff.');
+    	
     }
 
     public function add(Request $request){

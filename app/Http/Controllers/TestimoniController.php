@@ -14,7 +14,12 @@ class TestimoniController extends Controller
     }
     public function home(){
     	$testimoni = Testimoni::all();
-    	return view('admin.testimoni', ['testimoni'=>$testimoni]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[0] == '1')
+            return view('admin.testimoni', ['testimoni'=>$testimoni]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur testimoni.');
+    	
     }
 
     public function add(Request $request){

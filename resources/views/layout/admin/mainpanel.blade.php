@@ -46,8 +46,13 @@
         <div class="container-fluid">
           <!-- content here -->
           @if(session()->has('info'))
-      <div class="alert alert-success">
+      <div class="alert alert-dismissible alert-success">
           {{ session()->get('info') }}
+      </div>
+    @endif
+    @if(session()->has('error'))
+      <div class="alert alert-dismissible alert-danger">
+          {{ session()->get('error') }}
       </div>
     @endif
     @if(count($errors)>0)

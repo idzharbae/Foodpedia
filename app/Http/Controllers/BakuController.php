@@ -14,7 +14,13 @@ class BakuController extends Controller
     }
     public function home(){
         $baku = Baku::all();
-        return view('admin.bahan', ['baku'=>$baku]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[7] == '1')
+            return view('admin.bahan', ['baku'=>$baku]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur bahan baku.');
+
+        
     }
 
     public function add(Request $request){

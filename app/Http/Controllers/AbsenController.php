@@ -17,7 +17,12 @@ class AbsenController extends Controller
         $staff = Staff::all();
         $absen = Absen::all();
         $test = null;
-        return view('admin.absen',compact('staff','absen','test'));
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[9] == '1')
+            return view('admin.absen',compact('staff','absen','test','privilege'));
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur absen.');
+
     }
     public function cek(Request $request){
         $this->validate($request,[

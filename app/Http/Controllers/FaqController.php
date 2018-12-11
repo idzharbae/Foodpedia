@@ -15,7 +15,12 @@ class FaqController extends Controller
     }
     public function home(){
     	$faq = Faq::all();
-    	return view('admin.faq', ['faq'=>$faq]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[5] == '1')
+            return view('admin.faq', ['faq'=>$faq]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur FAQ.');
+    	
     }
 
     public function add(Request $request){

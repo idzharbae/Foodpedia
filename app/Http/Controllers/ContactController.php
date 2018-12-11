@@ -16,7 +16,12 @@ class ContactController extends Controller
     }
     public function home(){
     	$contact = Contact::all();
-    	return view('admin.message', ['contact'=>$contact]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[6] == '1')
+            return view('admin.message', ['contact'=>$contact]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur message.');
+    	
     }
 
     public function add(Request $request){

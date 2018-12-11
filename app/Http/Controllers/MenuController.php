@@ -15,7 +15,12 @@ class MenuController extends Controller
     }
     public function home(){
     	$menu = Menu::all();
-    	return view('admin.menu', ['menu'=>$menu]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[3] == '1')
+            return view('admin.menu', ['menu'=>$menu]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur menu.');
+    	
     }
     public function add(Request $request){
         // dd($request);

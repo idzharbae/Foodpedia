@@ -15,7 +15,12 @@ class SlideShowController extends Controller
     }
     public function show(){
     	$ss = Slideshow::all();
-    	return view('admin.slideshow', ['ss'=>$ss]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[2] == '1')
+            return view('admin.slideshow', ['ss'=>$ss]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur banner.');
+    	
     }
 
     public function add(Request $request){

@@ -63,10 +63,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $privileges = 0;
+        if(array_key_exists("privileges",$data)){
+            foreach($data['privileges'] as $privilege){
+                $privileges += $privilege;
+            }
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'privilege' => $privileges,
         ]);
     }
 }

@@ -85,7 +85,129 @@ document.onreadystatechange = () => {
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                     </div>
                 </div>
+                <div class="row" style="margin-left: 35px;">
+                  <label>Akses ke fitur: </label>
+                </div>
 
+                <div class="row" style="margin-left: 20px;">
+                  <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="1">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Absen
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="2">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Register Admin
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="4">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Bahan Baku
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="8">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Message
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="16">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          FAQ
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20px;">
+                  <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="32">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Kolegial
+                        </label>
+                      </div>
+                    </div>
+                  <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="64">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Menu
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="128">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Banner
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="256">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Staff
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-1">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="512">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Testimoni
+                        </label>
+                      </div>
+                    </div>
+                </div>
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">
@@ -155,25 +277,219 @@ document.onreadystatechange = () => {
                           </button>
                         </div>
                         <div class="modal-body">
-                          <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/menu/update/'.$item->id) }}" enctype="multipart/form-data" >
-                                      {{ csrf_field() }}
-                                      
-                            <div class="row" style="margin-top: 20px;">
-                              <div class="col-md-5">
-                                <div class="form-group">
-                                  <label>Nama</label>
-                                  <input type="text" class="form-control" name="name" value = "{{$item->name}}">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row" style="margin-top: 20px;">
-                                <div class="col-md-5">
-                                  <div class="form-group">
-                                    <label>email</label>
-                                    <input type="number" class="form-control" name="harga" value = "{{$item->email}}">
-                                    </div>
-                                  </div>
-                                </div>
+                          <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/admin/register/update/'.$item->id) }}" enctype="multipart/form-data" >
+                            @csrf
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ $item->name }}" required autofocus>
+
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $item->email }}" required>
+
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('New Password') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-left: 20px;">
+                  <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="1" 
+                        @if(sprintf("%010d",decbin($item->privilege))[9] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Absen
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="2"
+@if(sprintf("%010d",decbin($item->privilege))[8] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Register Admin
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="4"
+                        @if(sprintf("%010d",decbin($item->privilege))[7] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Bahan Baku
+                        </label>
+                      </div>
+                    </div>
+</div>
+<div class="row" style="margin-left: 20px;">
+                    <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="8"
+@if(sprintf("%010d",decbin($item->privilege))[6] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Message
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="16"
+                        @if(sprintf("%010d",decbin($item->privilege))[5] == '1')
+                          checked
+                        @endif>
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          FAQ
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="row" style="margin-left: 20px;">
+                  <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="32"
+@if(sprintf("%010d",decbin($item->privilege))[4] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Kolegial
+                        </label>
+                      </div>
+                    </div>
+                  <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="64"
+@if(sprintf("%010d",decbin($item->privilege))[3] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Menu
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="128"
+@if(sprintf("%010d",decbin($item->privilege))[2] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Banner
+                        </label>
+                      </div>
+                    </div>
+</div>
+<div class="row" style="margin-left: 20px;">
+                    <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="256"
+@if(sprintf("%010d",decbin($item->privilege))[1] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Staff
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="privileges[]" value="512"
+@if( sprintf("%010d",decbin($item->privilege))[0] == '1')
+                          checked
+                        @endif
+                        >
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Testimoni
+                        </label>
+                      </div>
+                    </div>
+                </div>
                                 <div class="modal-footer">
                                   <button type="submit" class="btn btn-primary pull-left">Update Data</button>
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -199,7 +515,7 @@ document.onreadystatechange = () => {
                                       
                               </p>
                               <div class="modal-footer">
-                                <a href="{{ url('/admin/menu/delete/'.$item->id) }}" class="btn btn-danger">Delete</a>
+                                <a href="{{ url('/admin/register/delete/'.$item->id) }}" class="btn btn-danger">Delete</a>
                                 <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">Close</button>
                               </div>

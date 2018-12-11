@@ -69,8 +69,9 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('/message', 'ContactController@home');
 	Route::get('/message/delete/{id}', 'ContactController@delete');
 	Route::get('/message/read/{id}', 'ContactController@mark');
+
 	Route::get('/register','AdminController@list');
-	Route::post('/register/delete/{id}','AdminController@delete');
+	Route::get('/register/delete/{id}','AdminController@delete');
 	Route::post('/register/update/{id}','AdminController@edit');
 
 	Route::get('/staff','StaffController@home');

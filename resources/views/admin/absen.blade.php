@@ -18,7 +18,6 @@ document.onreadystatechange = () => {
 </script>
 
 @section('content')
-
 <ul id="tabscript" class="nav nav-tabs" >
   <li class="tabss"><a data-toggle="tab" href="#absen">Kehadiran</a></li>
   <li class="tabss"><a data-toggle="tab" href="#absendulu">List Kehadiran</a></li>

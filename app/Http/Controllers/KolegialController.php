@@ -14,7 +14,12 @@ class KolegialController extends Controller
     }
     public function home(){
     	$kolegial = Kolegial::all();
-    	return view('admin.kolegial', ['kolegial'=>$kolegial]);
+        $privilege = sprintf("%010d",decbin(\Auth::user()->privilege));
+        if($privilege[4] == '1')
+            return view('admin.kolegial', ['kolegial'=>$kolegial]);
+        else
+            return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur kolegial.');
+    	
     }
 
     public function add(Request $request){
