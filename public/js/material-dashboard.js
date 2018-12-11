@@ -208,9 +208,9 @@ md = {
       /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
 
       dataCompletedTasksChart = {
-        labels: HariCount.reverse(),
+        labels: HariCount,
         series: [
-          IpCount.reverse()
+          IpCount,
         ]
       };
       var maks = IpCount[0];
@@ -250,7 +250,6 @@ md = {
         let v = Total[i];
         maks = (v > maks) ? v : maks;
       }
-      console.log(dataWebsiteViewsChart);
       var optionsWebsiteViewsChart = {
         axisX: {
           showGrid: false
@@ -319,7 +318,6 @@ md = {
     $sidebar_wrapper = $('.sidebar-wrapper');
 
     if (!mobile_menu_initialized) {
-      console.log('intra');
       $navbar = $('nav').find('.navbar-collapse').children('.navbar-nav');
 
       mobile_menu_content = '';

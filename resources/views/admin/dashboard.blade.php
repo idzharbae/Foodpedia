@@ -28,15 +28,11 @@
         var idx = -1;
         $(document).ready(function(){
           $.get(url, function(response){
-            response.forEach(function(data){
-                if(HariCount.indexOf(data.created_at.substring(5,10)) == -1){
-                        HariCount.push(data.created_at.substring(5,10));
-                        IpCount.push(1);
-                        idx += 1;
-                    }else{
-                        IpCount[idx] += 1;
-                    }
-            });
+            HariCount = Object.keys(response).reverse();
+            for(var i = 0; i < Object.values(response).length; i++){
+              IpCount.push(Object.values(response)[i].length);
+            }
+            IpCount = IpCount.reverse();
         });
     });
 setTimeout(function(){

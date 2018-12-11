@@ -8,6 +8,7 @@ use App\Absen;
 use App\Staff;
 use App\Contact;
 use App\Tasks;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -39,7 +40,10 @@ class DashboardController extends Controller
     }
     public function visitor()
     {
-      $result = Visitor::select('created_at')->orderByDesc('created_at')->skip(0)->take(7)->get();
+      $result = Visitor::select('created_at')->orderByDesc('created_at')->whereDate(
+        'created_at', '>', Carbon::now()->subDays(7))->get()->groupBy(function($date) {
+        return Carbon::parse($date->created_at)->format('D');
+    });
       return response()->json($result);
     }
     public function addTask(Request $request){

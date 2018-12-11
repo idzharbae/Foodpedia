@@ -51,7 +51,7 @@
 
                     <td>{{$tugas->description}} 
                       @php
-                        if($tugas->deadline < date("Y-m-d")){ 
+                        if($tugas->deadline < date("Y-m-d") && $tugas->status == 0){ 
                           echo '<div class="stats"><small><i class="material-icons text-danger">warning</i> (deadline pada '.date("D d-m-Y", strtotime($tugas->deadline) ). ') </small></div>'; 
                         }
                       @endphp</td>
@@ -170,7 +170,7 @@
                     </td>
                     <td>{{$tugas->description}} 
                       @php
-                        if($tugas->deadline < date("Y-m-d")){ 
+                        if($tugas->deadline < date("Y-m-d") && $tugas->status == 0){ 
                           echo '<div class="stats"><small><i class="material-icons text-danger">warning</i> (deadline pada '.date("D d-m-Y", strtotime($tugas->deadline) ). ') </small></div>'; 
                         }
                       @endphp</td>
@@ -289,7 +289,7 @@
                     </td>
                     <td>{{$tugas->description}} 
                       @php
-                        if($tugas->deadline < date("Y-m-d")){ 
+                        if($tugas->deadline < date("Y-m-d") && $tugas->status == 0){ 
                           echo '<div class="stats"><small><i class="material-icons text-danger">warning</i> (deadline pada '.date("D d-m-Y", strtotime($tugas->deadline) ). ') </small></div>'; 
                         }
                       @endphp</td>
