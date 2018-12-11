@@ -2,32 +2,22 @@
   <div id="foodmenu" class="light-wrapper">
         <div class="container inner">
             <h2 class="section-title text-center">Menu</h2>
-            <p class="lead main text-center">Rekomendasi dari kami</p>
+            <p class="lead main text-center">Menu Populer Kami</p>
             <div class="row">
               <div class="swiper-container main-slider" id="foodmenu" style="height: 500px">
                 <div class="swiper-wrapper">
+                  @foreach($recom as $item)
                     <div class="swiper-slide slider-bg-position" data-hash="slide1">
                       <div class="baner">
-                        <strong>Nasi Goreng<span>Pake Telor</span></strong>
-                        <b>Rp. 1.000.000,-</b>
+                        <strong>{{$item->name}}</strong>
+                        <b>Rp. {{number_format($item->harga)}}.00-</b>
                         <p>
-                          <span>Lorem ipsum dolamet consectetur<br>
-                          adipisicing elit, sed do eiusmod tempor aliqua enim ad minim veniam, quis nosinci- didunt ut labore et dolore.</span>
+                          <span>{{$item->description}}</span>
                         </p>
                       </div>
-                      <div class="gambar"><img src="img/nasgor.jpg" alt=""></div>
+                      <div class="gambar"><img src="{{$item->image}}" alt=""></div>
                     </div>
-                    <div class="swiper-slide slider-bg-position" data-hash="slide2">
-                      <div class="baner">
-                        <strong>Pizza<span>Mantaps</span></strong>
-                        <b>Rp. 999.999.999,-</b>
-                        <p>
-                          <span>Lorem ipsum dolamet consectetur <br>
-                          adipisicing elit, sed do eiusmod tempor aliqua enim ad minim veniam, quis nosinci- didunt ut labore et dolore.</span>
-                        </p>
-                      </div>
-                      <div class="gambar"><img src="img/pk-banner.jpg" alt=""></div>
-                    </div>
+                  @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
               </div>

@@ -27,6 +27,7 @@ class MenuController extends Controller
     	]);
     	$menu = new Menu;
     	$menu->name = $request->input('name');
+        $menu->description = $request->input('description');
         $menu->recommended = $request->input('recommended');
         $menu->harga = $request->input('harga');
         if($request->hasFile('image')){
@@ -51,6 +52,7 @@ class MenuController extends Controller
         $menu->name = $request->input('name');
         $menu->recommended = $request->input('recommended');
         $menu->harga = $request->input('harga');
+        $menu->description = $request->input('description');
         if($request->hasFile('image')){
             Storage::disk('local')->delete('menu',$menu->image);
             $name = Storage::disk('local')->put('menu', $request->image);

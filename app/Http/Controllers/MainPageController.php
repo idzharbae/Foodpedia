@@ -23,6 +23,7 @@ class MainPageController extends Controller
     $testimoni = Testimoni::all();
     $ip = request()->ip();
     $check = Visitor::whereDate('created_at','=',date('Y-m-d'))->get();
+    $recom = Menu::where('recommended','Ya')->get();
     if($check->isEmpty()){
       DB::table('visitors')->insert(
         ['ip' => $ip,
@@ -39,6 +40,7 @@ class MainPageController extends Controller
       'ip' => $ip,
       'check' => $check,
       'ss'=>$ss,
+      'recom'=>$recom,
     ]);
   }
 

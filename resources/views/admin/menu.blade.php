@@ -47,6 +47,9 @@ document.onreadystatechange = () => {
                           Harga
                         </th>
                         <th>
+                          Deskripsi
+                        </th>
+                        <th>
                           Gambar
                         </th>
                         <th>
@@ -64,6 +67,9 @@ document.onreadystatechange = () => {
                           </td>
                           <td>
                             {{$item->harga}}
+                          </td>
+                          <td>
+                            {{str_limit($item->description, 30)}}
                           </td>
                           <td>
                             <img class="img-responsive img-cover-profile" src="{{asset($item->image)}}" alt=""
@@ -104,7 +110,7 @@ document.onreadystatechange = () => {
                                               <option value="Ya">Ya</option>
                                             @endif
                                             @if($item->recommended == "Tidak")
-                                              <option value="Tidak">Tidak</option>
+                                              <option value="Tidak" selected>Tidak</option>
                                             @else
                                               <option value="Tidak">Tidak</option>
                                             @endif
@@ -117,6 +123,14 @@ document.onreadystatechange = () => {
                                           <div class="form-group">
                                             <label>Harga</label>
                                             <input type="number" class="form-control" name="harga" value = "{{$item->harga}}">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Deskripsi</label>
+                                            <input type="text" class="form-control" name="description" value = "{{$item->description}}">
                                           </div>
                                         </div>
                                     </div>
@@ -204,7 +218,7 @@ document.onreadystatechange = () => {
                               <label>Rekomendasi^</label>
                               <select style="margin-top: 20px;" name="recommended" class="col-md-2">
                                 <option value="Ya">Ya</option>
-                                <option value="Tidak">Tidak</option>
+                                <option value="Tidak" selected>Tidak</option>
                               </select>
                             </div>
                           </div>
@@ -217,6 +231,14 @@ document.onreadystatechange = () => {
                             </div>
                           </div>
                       </div>
+                      <div class="row" style="margin-top: 20px;">
+                                      <div class="col-md-5">
+                                          <div class="form-group">
+                                            <label>Deskripsi</label>
+                                            <input type="text" class="form-control" name="description">
+                                          </div>
+                                        </div>
+                                    </div>
                       <div class="row">
                         <div class="col-md-5">
                             <div>
