@@ -56,7 +56,7 @@
                 </div> -->
             </div>
           </br>
-            <button onclick="location.href='{{ url('food') }}'"class="btn btn-danger btn-lg col-md-12" >Lihat Semua Menu</button>
+            <button onclick="location.href='{{ url('food') }}'" class="btn btn-danger btn-lg col-md-12" >Lihat Semua Menu</button>
         </div>
 
         <!-- /.container -->

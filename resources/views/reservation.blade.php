@@ -4,44 +4,6 @@
             <h2 class="section-title text-center">Kolegial</h2>
             <p class="lead main text-center">Insert Kata kata here</p>
             <div class="box">
-            <div class="container">
-                <div class="row">
-                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="box-title">
-                                    <h4>Silver</h4>
-                            </div>
-                            <div class="box-part text-center">
-                                <i class="fa fa-wifi fa-3x" aria-hidden="true"></i>
-
-                                <div class="text">
-                                    <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
-                                </div>
-
-                                <a href="#">Learn More</a>
-
-                             </div>
-                        </div>
-
-                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="box-title">
-                                    <h4>Gold</h4>
-                                </div>
-                            <div class="box-part text-center">
-                                <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
-                                <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
-                                <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
-
-                                <div class="text">
-                                    <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
-                                </div>
-
-                                <a href="#">Learn More</a>
-
-                             </div>
-                        </div>
-
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-md-6">

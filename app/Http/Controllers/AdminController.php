@@ -31,7 +31,7 @@ class AdminController extends Controller
     public function edit(Request $request, $id){
         $this->validate($request,[
     		'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|exists:users',
+          'email' => 'required|string|email|max:255|exists:users',
             'password' => 'required|string|min:6|confirmed'
     	]);
         if($request->input('password') != $request->input('password_confirmation')){

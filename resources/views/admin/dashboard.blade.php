@@ -47,7 +47,7 @@ setTimeout(function(){
         success:function(result){
       setTimeout(function(){// wait for 5 secs(2)
            location.reload(); // then reload the page.(3)
-      }, 1000); 
+      }, 1000);
        }
      });
  }

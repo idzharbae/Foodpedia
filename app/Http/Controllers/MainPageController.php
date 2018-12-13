@@ -64,7 +64,7 @@ class MainPageController extends Controller
     $contact->subject = $request->input('subject');
     $contact->message = $request->input('message');
     $contact->save();
-    return redirect("/")->with('info_success_contact', 'Terima kasih untuk pesannya!');
+    return redirect("/")->with('info_contact', 'Terima kasih untuk pesannya!');
   }
 
   // POST request kolegial
@@ -85,6 +85,6 @@ class MainPageController extends Controller
     $kolegial->phone = $request->input('phone');
     $kolegial->rank = $request->input('rank');
     $kolegial->save();
-    return redirect('/')->with('info_success_kolegial', 'Terima kasih telan memesan Kolegial');
+    return redirect('/')->with('info_kolegial', 'Terima kasih telan memesan Kolegial');
   }
 }

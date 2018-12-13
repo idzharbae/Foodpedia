@@ -6,7 +6,7 @@
 
    @include('layout.partials.head')
 <style>
-  
+
 .modal {
   position: fixed;
   top: 0;
@@ -207,7 +207,7 @@
                <a class="navbar-brand" href="#"><h2>Foodpedia</h2></a>
            </div><!-- navbar-header -->
        <div id="navbar" class="navbar-collapse collapse">
-           <div class="hidden-xs" id="logo"><a href="/#header">
+           <div class="hidden-xs" id="logo"><a onclick="location.href='{{ url('/') }}'">
                <img src="{{URL::asset('img/logo.png')}}" alt="" style="width:150px;height:150px;">
            </a></div>
            <ul class="nav navbar-nav navbar-right">
@@ -230,5 +230,5 @@
     <script src="js/jquery.scrollTo.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    
+
 </body>

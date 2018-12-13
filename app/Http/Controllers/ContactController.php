@@ -21,7 +21,7 @@ class ContactController extends Controller
             return view('admin.message', ['contact'=>$contact]);
         else
             return redirect('admin/dashboard')->with('error','Anda tidak memiliki akses ke fitur message.');
-    	
+
     }
 
     public function add(Request $request){
@@ -37,7 +37,7 @@ class ContactController extends Controller
         $contact->subject = $request->input('subject');
     	$contact->message = $request->input('message');
     	$contact->save();
-    	return redirect('/')->with('info','Menu Saved Successfully!');
+    	return redirect('/#contact')->with('info','Menu Saved Successfully!');
     }
     public function update($id){
     	$contact = Contact::find($id);
@@ -65,7 +65,7 @@ class ContactController extends Controller
     }
     public function delete($id){
     	Contact::where('id',$id)->delete();
-    	return redirect('/')->with('info','Menu Deleted Successfully!');
+    	return redirect('admin/message')->with('info','Menu Deleted Successfully!');
     }
 
     public function mark($id)

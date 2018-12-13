@@ -5,87 +5,35 @@
             <p class="lead main text-center">Nyaman mengerjakan tugas di ruangan full AC dan WIFI kecepatan tinggi.</p>
 
             <div class="row">
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish3.jpg" alt=""></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">Chicken Fried Rice</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
-
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <!--price tag-->
-                        <!-- <span class="hot-tag br-red">$26</span> -->
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish2.jpg" alt=""></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">Hot Fried Chicken</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
-
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="clearfix visible-md"></div>
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish4.jpg" alt=""></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">Thi Chicken Momo</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
-
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="img/dish/dish1.jpg" alt=""></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">Cocktail Sushi</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div style="text-align: center; width: 250px; padding: 10px; border: 5px solid white; margin: 0;">IDR80000</div>
-
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
+              <div class="col-md-6">
+              <div style="text-align: center; padding: 10px; border: 5px solid white; margin: 0;">
+                <h3 style="color: #C0C0C0"><b>Silver Plan</b></h3>
+                <hr>
+                <p>Wifi 3 Jam Perhari</p>
+                <hr>
+                <p>Maksimal cuma 1 Jam Perhari</p>
+                <hr>
+                <p>Blabla bla wow</p>
+                <hr>
+                <p>IDR100.000 per bulan</p>
+              </div>
+              </div>
+              <div class="col-md-6">
+              <div style="text-align: center; padding: 10px; border: 5px solid white; margin: 0;">
+                <h3 style="color: #FFD700"><b>Gold plan</b></h3>
+                <hr>
+                <p>Wifi Unlimited Kouta</p>
+                <hr>
+                <p>Maksimal 25 Jam/Perhari </p>
+                <hr>
+                <p>Blabla bla wow</p>
+                <hr>
+                <p>IDR250.000 per bulan</p>
+              </div>
+              </div>
             </div>
 
         </div>
+
         <!-- /.container -->
     </div><!-- /#special-offser -->
